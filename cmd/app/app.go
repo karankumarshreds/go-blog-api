@@ -41,6 +41,7 @@ func (a *App) Init() {
 	blogHandlers := handlers.NewBlogHandlers(blogService)
 
 	a.app.Post("/", blogHandlers.Create)
+	a.app.Get("/:id", blogHandlers.Get)
 }
 
 func (a *App) Start() {

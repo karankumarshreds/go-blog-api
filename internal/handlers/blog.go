@@ -15,6 +15,7 @@ type BlogHandlers struct {
 
 type BlogServicePort interface {
 	Create(payload core.CreateBlogDto) (*primitive.ObjectID, error)
+	Get(id string) (*core.Blog, error)
 }
 
 func NewBlogHandlers(blogService BlogServicePort) *BlogHandlers {
@@ -38,5 +39,15 @@ func (b *BlogHandlers) Create(c *fiber.Ctx) error {
 		return c.Status(fiber.StatusInternalServerError).JSON(createError.Error())
 	} else {
 		return c.JSON(id)
+	}
+}
+
+func (b *BlogHandlers) Get(c *fiber.Ctx) error {
+	id := c.Params("id")
+	res, err := b.blogService.Get(id)
+	if err != nil {
+		return c.Status(fiber.ErrBadRequest.Code).JSON(err.Error())
+	} else {
+		return c.JSON(res)
 	}
 }

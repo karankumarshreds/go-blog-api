@@ -11,6 +11,7 @@ type BlogService struct {
 
 type BlogRepoPort interface {
 	Create(payload core.CreateBlogDto) (*primitive.ObjectID, error)
+	Get(id string) (*core.Blog, error)
 }
 
 func NewBlogService(blogRepo BlogRepoPort) *BlogService {
@@ -19,4 +20,8 @@ func NewBlogService(blogRepo BlogRepoPort) *BlogService {
 
 func (b *BlogService) Create(payload core.CreateBlogDto) (*primitive.ObjectID, error) {
 	return b.blogRepo.Create(payload)
+}
+
+func (b *BlogService) Get(id string) (*core.Blog, error) {
+	return b.blogRepo.Get(id)
 }
