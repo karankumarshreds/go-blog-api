@@ -30,6 +30,24 @@ func (a *App) Init() {
 	if err := godotenv.Load(); err != nil {
 		log.Panic("Error loading .env file")
 	}
+
+	db := a.MongoConnect()
+
+	a.app = fiber.New()
+
+	// Dependency injection
+	blogRepo := repos.NewBlogRepo(db)
+	blogService := services.NewBlogService(blogRepo)
+	blogHandlers := handlers.NewBlogHandlers(blogService)
+
+	a.app.Post("/", blogHandlers.Create)
+}
+
+func (a *App) Start() {
+	log.Panic(a.app.Listen(os.Getenv("PORT")))
+}
+
+func (a *App) MongoConnect() *mongo.Database {
 	serverAPIOptions := options.ServerAPI(options.ServerAPIVersion1)
 	clientOptions := options.Client().ApplyURI(os.Getenv("CONN_STRING")).SetServerAPIOptions(serverAPIOptions)
 	ctx, cancel := context.WithTimeout(context.Background(), CONNECTION_TIMEOUT*time.Second)
@@ -42,20 +60,5 @@ func (a *App) Init() {
 		log.Println("Mongo connection successfull")
 	}
 
-	db := mongoClient.Database("go-blog-api")
-
-	a.app = fiber.New()
-	blogRepo := repos.NewBlogRepo(db)
-	blogService := services.NewBlogService(blogRepo)
-	blogHandlers := handlers.NewBlogHandlers(blogService)
-
-	a.app.Post("/", blogHandlers.Create)
-}
-
-func (a *App) Start() {
-	log.Panic(a.app.Listen(os.Getenv("PORT")))
-}
-
-func (a *App) MongoConnect() {
-
+	return mongoClient.Database("go-blog-api")
 }

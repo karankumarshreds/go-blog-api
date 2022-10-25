@@ -6,6 +6,7 @@ import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/karankumarshreds/go-blog-api/internal/core"
 	"github.com/karankumarshreds/go-blog-api/internal/middlewares"
+	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
 type BlogHandlers struct {
@@ -13,7 +14,7 @@ type BlogHandlers struct {
 }
 
 type BlogServicePort interface {
-	Create(payload core.CreateBlogDto) (*int, error)
+	Create(payload core.CreateBlogDto) (*primitive.ObjectID, error)
 }
 
 func NewBlogHandlers(blogService BlogServicePort) *BlogHandlers {
