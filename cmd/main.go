@@ -1,15 +1,9 @@
 package main
 
-import "github.com/gofiber/fiber/v2"
-
-const PORT = ":8000"
+import "github.com/karankumarshreds/go-blog-api/cmd/app"
 
 func main() {
-	app := fiber.New()
-
-	app.Get("/", func(c *fiber.Ctx) error {
-		return c.SendString("Hello World")
-	})
-
-	app.Listen(PORT)
+	a := app.App{}
+	a.Init()
+	a.Start()
 }
