@@ -2,11 +2,11 @@ package repos
 
 import (
 	"context"
-	"errors"
 	"log"
 	"time"
 
 	"github.com/karankumarshreds/go-blog-api/constants"
+	"github.com/karankumarshreds/go-blog-api/custom_errors"
 	"github.com/karankumarshreds/go-blog-api/internal/core"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
@@ -22,7 +22,7 @@ func NewBlogRepo(db *mongo.Database) *BlogRepo {
 	return &BlogRepo{db}
 }
 
-func (b *BlogRepo) Create(payload core.CreateBlogDto) (*primitive.ObjectID, error) {
+func (b *BlogRepo) Create(payload core.CreateBlogDto) (*primitive.ObjectID, *custom_errors.CustomError) {
 	c := b.DB.Collection(constants.MongoCollections.BLOGS)
 	blog := CreateBsonObject(map[string]interface{}{
 		"title":       payload.Title,
@@ -33,27 +33,37 @@ func (b *BlogRepo) Create(payload core.CreateBlogDto) (*primitive.ObjectID, erro
 	})
 	res, err := c.InsertOne(context.TODO(), blog)
 	if err != nil {
-		log.Println("error")
-		return nil, err
+		msg := "Cannot insert document"
+		log.Println(msg, err)
+		return nil, custom_errors.InternalServerError(msg)
 	}
 	id := res.InsertedID.(primitive.ObjectID)
 	return &id, nil
 }
 
-func (b *BlogRepo) Get(id string) (*core.Blog, error) {
+func (b *BlogRepo) Get(id string) (*core.Blog, *custom_errors.CustomError) {
 	c := b.DB.Collection(constants.MongoCollections.BLOGS)
 	blog := new(core.Blog)
+	// convert the provided id from hex string -> mongo objectid
 	_id, err := primitive.ObjectIDFromHex(id)
 	if err != nil {
-		return nil, err
+		msg := "Object id is not valid"
+		log.Println(msg)
+		return nil, custom_errors.BadRequestError(msg)
 	}
 	filter := CreateBsonObject(map[string]interface{}{
 		"_id": _id,
 	})
 	if err := c.FindOne(context.TODO(), filter).Decode(blog); err != nil {
-		msg := "Object with given id not found"
-		log.Println(msg, err)
-		return nil, errors.New(msg)
+		if err.Error() == mongo.ErrNoDocuments.Error() {
+			msg := "Object with given id not found"
+			log.Println(msg, err)
+			return nil, custom_errors.NotFoundError(msg)
+		} else {
+			msg := "Cannot find the document"
+			log.Println(msg, err)
+			return nil, custom_errors.InternalServerError(msg)
+		}
 	}
 	return blog, nil
 }

@@ -4,6 +4,7 @@ import (
 	"log"
 
 	"github.com/gofiber/fiber/v2"
+	"github.com/karankumarshreds/go-blog-api/custom_errors"
 	"github.com/karankumarshreds/go-blog-api/internal/core"
 	"github.com/karankumarshreds/go-blog-api/internal/middlewares"
 	"go.mongodb.org/mongo-driver/bson/primitive"
@@ -14,8 +15,8 @@ type BlogHandlers struct {
 }
 
 type BlogServicePort interface {
-	Create(payload core.CreateBlogDto) (*primitive.ObjectID, error)
-	Get(id string) (*core.Blog, error)
+	Create(payload core.CreateBlogDto) (*primitive.ObjectID, *custom_errors.CustomError)
+	Get(id string) (*core.Blog, *custom_errors.CustomError)
 }
 
 func NewBlogHandlers(blogService BlogServicePort) *BlogHandlers {
@@ -36,7 +37,7 @@ func (b *BlogHandlers) Create(c *fiber.Ctx) error {
 	}
 
 	if id, createError := b.blogService.Create(*blog); createError != nil {
-		return c.Status(fiber.StatusInternalServerError).JSON(createError.Error())
+		return c.Status(fiber.StatusInternalServerError).JSON(createError.Message)
 	} else {
 		return c.JSON(id)
 	}
@@ -45,8 +46,9 @@ func (b *BlogHandlers) Create(c *fiber.Ctx) error {
 func (b *BlogHandlers) Get(c *fiber.Ctx) error {
 	id := c.Params("id")
 	res, err := b.blogService.Get(id)
+
 	if err != nil {
-		return c.Status(fiber.ErrBadRequest.Code).JSON(err.Error())
+		return c.Status(err.Status).JSON(err.Message)
 	} else {
 		return c.JSON(res)
 	}

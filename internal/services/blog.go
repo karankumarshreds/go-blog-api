@@ -1,6 +1,7 @@
 package services
 
 import (
+	"github.com/karankumarshreds/go-blog-api/custom_errors"
 	"github.com/karankumarshreds/go-blog-api/internal/core"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 )
@@ -10,18 +11,18 @@ type BlogService struct {
 }
 
 type BlogRepoPort interface {
-	Create(payload core.CreateBlogDto) (*primitive.ObjectID, error)
-	Get(id string) (*core.Blog, error)
+	Create(payload core.CreateBlogDto) (*primitive.ObjectID, *custom_errors.CustomError)
+	Get(id string) (*core.Blog, *custom_errors.CustomError)
 }
 
 func NewBlogService(blogRepo BlogRepoPort) *BlogService {
 	return &BlogService{blogRepo}
 }
 
-func (b *BlogService) Create(payload core.CreateBlogDto) (*primitive.ObjectID, error) {
+func (b *BlogService) Create(payload core.CreateBlogDto) (*primitive.ObjectID, *custom_errors.CustomError) {
 	return b.blogRepo.Create(payload)
 }
 
-func (b *BlogService) Get(id string) (*core.Blog, error) {
+func (b *BlogService) Get(id string) (*core.Blog, *custom_errors.CustomError) {
 	return b.blogRepo.Get(id)
 }
