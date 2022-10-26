@@ -2,6 +2,7 @@ package app
 
 import (
 	"context"
+	"fmt"
 	"log"
 	"os"
 	"time"
@@ -27,12 +28,8 @@ func NewApp() *App {
 const CONNECTION_TIMEOUT = 10
 
 func (a *App) Init() {
-	if err := godotenv.Load(); err != nil {
-		log.Panic("Error loading .env file")
-	}
-
+	CheckEnvs()
 	db := a.MongoConnect()
-
 	a.app = fiber.New()
 
 	// Dependency injection
@@ -40,8 +37,8 @@ func (a *App) Init() {
 	blogService := services.NewBlogService(blogRepo)
 	blogHandlers := handlers.NewBlogHandlers(blogService)
 
-	a.app.Post("/", blogHandlers.Create)
-	a.app.Get("/:id", blogHandlers.Get)
+	a.app.Post(createPath("/"), blogHandlers.Create)
+	a.app.Get(createPath("/:id"), blogHandlers.Get)
 }
 
 func (a *App) Start() {
@@ -62,4 +59,24 @@ func (a *App) MongoConnect() *mongo.Database {
 	}
 
 	return mongoClient.Database("go-blog-api")
+}
+
+func CheckEnvs() {
+	if err := godotenv.Load(); err != nil {
+		log.Panic("Error loading .env file")
+	}
+	envs := []string{
+		"CONN_STRING",
+		"PORT",
+		"API_PREFIX",
+	}
+	for _, e := range envs {
+		if os.Getenv(e) == "" {
+			log.Panic(fmt.Sprintf("%v env not defined", e))
+		}
+	}
+}
+
+func createPath(path string) string {
+	return fmt.Sprintf("%v%v", os.Getenv("API_PREFIX"), path)
 }
