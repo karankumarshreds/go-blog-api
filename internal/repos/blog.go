@@ -24,7 +24,7 @@ func NewBlogRepo(db *mongo.Database) *BlogRepo {
 
 func (b *BlogRepo) Create(payload core.CreateBlogDto) (*primitive.ObjectID, *custom_errors.CustomError) {
 	c := b.DB.Collection(constants.MongoCollections.BLOGS)
-	blog := CreateBsonObject(map[string]interface{}{
+	blog := CreateBsonDObject(map[string]interface{}{
 		"title":       payload.Title,
 		"description": payload.Description,
 		"body":        payload.Body,
@@ -51,7 +51,7 @@ func (b *BlogRepo) Get(id string) (*core.Blog, *custom_errors.CustomError) {
 		log.Println(msg)
 		return nil, custom_errors.BadRequestError(msg)
 	}
-	filter := CreateBsonObject(map[string]interface{}{
+	filter := CreateBsonDObject(map[string]interface{}{
 		"_id": _id,
 	})
 	if err := c.FindOne(context.TODO(), filter).Decode(blog); err != nil {
@@ -68,7 +68,44 @@ func (b *BlogRepo) Get(id string) (*core.Blog, *custom_errors.CustomError) {
 	return blog, nil
 }
 
-func CreateBsonObject(data map[string]interface{}) bson.D {
+func (b *BlogRepo) Update(id string, payload core.CreateBlogDto) (*core.Blog, *custom_errors.CustomError) {
+	_id, err := ConvertToOjectId(id)
+	if err != nil {
+		return nil, err
+	}
+
+	c := b.DB.Collection(constants.MongoCollections.BLOGS)
+	filter := CreateBsonDObject(map[string]interface{}{
+		"_id": _id,
+	})
+	update := bson.M{
+		"title":       payload.Title,
+		"body":        payload.Body,
+		"description": payload.Description,
+	}
+
+	if _, err := c.UpdateOne(context.TODO(), filter, bson.M{"$set": update}); err != nil {
+		if err == mongo.ErrNoDocuments {
+			msg := "Object with given id not found"
+			log.Println(msg, err)
+			return nil, custom_errors.NotFoundError(msg)
+		} else {
+			msg := "Cannot find document"
+			log.Println(msg, err)
+			return nil, custom_errors.InternalServerError(msg)
+		}
+	} else {
+		blog := new(core.Blog)
+		if err := c.FindOne(context.TODO(), filter).Decode(blog); err != nil {
+			msg := "Cannot find document"
+			log.Println(msg, err)
+			return nil, custom_errors.InternalServerError(msg)
+		}
+		return blog, nil
+	}
+}
+
+func CreateBsonDObject(data map[string]interface{}) bson.D {
 	var bsonObject bson.D
 	for key, val := range data {
 		bsonObject = append(
@@ -77,4 +114,20 @@ func CreateBsonObject(data map[string]interface{}) bson.D {
 		)
 	}
 	return bsonObject
+}
+
+func CreateBsonMObject(data map[string]interface{}) bson.M {
+	var bsonObject bson.M
+	for key, val := range data {
+		bsonObject[key] = val
+	}
+	return bsonObject
+}
+
+func ConvertToOjectId(id string) (*primitive.ObjectID, *custom_errors.CustomError) {
+	if _id, err := primitive.ObjectIDFromHex(id); err != nil {
+		return nil, custom_errors.BadRequestError("Invalid object id")
+	} else {
+		return &_id, nil
+	}
 }

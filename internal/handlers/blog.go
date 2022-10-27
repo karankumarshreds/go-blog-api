@@ -17,6 +17,7 @@ type BlogHandlers struct {
 type BlogServicePort interface {
 	Create(payload core.CreateBlogDto) (*primitive.ObjectID, *custom_errors.CustomError)
 	Get(id string) (*core.Blog, *custom_errors.CustomError)
+	Update(id string, payload core.CreateBlogDto) (*core.Blog, *custom_errors.CustomError)
 }
 
 func NewBlogHandlers(blogService BlogServicePort) *BlogHandlers {
@@ -49,6 +50,27 @@ func (b *BlogHandlers) Get(c *fiber.Ctx) error {
 
 	if err != nil {
 		return c.Status(err.Status).JSON(err.Message)
+	} else {
+		return c.JSON(res)
+	}
+}
+
+func (b *BlogHandlers) Update(c *fiber.Ctx) error {
+	id := c.Params("id")
+	blog := new(core.CreateBlogDto)
+	if parseError := c.BodyParser(&blog); parseError != nil {
+		log.Println("Body parser error")
+		return c.Status(fiber.ErrBadRequest.Code).JSON(fiber.Map{
+			"message": parseError.Error(),
+		})
+	}
+	if validateError := middlewares.Validator.Struct(blog); validateError != nil {
+		log.Println("Body validation error")
+		return c.Status(fiber.ErrBadRequest.Code).JSON(validateError.Error())
+	}
+
+	if res, createError := b.blogService.Update(id, *blog); createError != nil {
+		return c.Status(fiber.StatusInternalServerError).JSON(createError.Message)
 	} else {
 		return c.JSON(res)
 	}

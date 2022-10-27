@@ -37,8 +37,9 @@ func (a *App) Init() {
 	blogService := services.NewBlogService(blogRepo)
 	blogHandlers := handlers.NewBlogHandlers(blogService)
 
-	a.app.Post(createPath("/"), blogHandlers.Create)
-	a.app.Get(createPath("/:id"), blogHandlers.Get)
+	a.app.Post(createPath("/blog"), blogHandlers.Create)
+	a.app.Get(createPath("/blog/:id"), blogHandlers.Get)
+	a.app.Put(createPath("/blog/:id"), blogHandlers.Update)
 }
 
 func (a *App) Start() {
