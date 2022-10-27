@@ -11,8 +11,8 @@ type Blog struct {
 	Title       string             `json:"title"`
 	Description string             `json:"description"`
 	Body        string             `json:"body"`
-	CreatedAt   time.Time          `json:"created_at"`
-	UpdatedAt   time.Time          `json:"updated_at"`
+	CreatedAt   time.Time          `json:"created_at" bson:"created_at"`
+	UpdatedAt   time.Time          `json:"updated_at" bson:"updated_at"`
 }
 
 type CreateBlogDto struct {

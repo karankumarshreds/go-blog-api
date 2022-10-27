@@ -82,6 +82,7 @@ func (b *BlogRepo) Update(id string, payload core.CreateBlogDto) (*core.Blog, *c
 		"title":       payload.Title,
 		"body":        payload.Body,
 		"description": payload.Description,
+		"updated_at":  time.Now(),
 	}
 
 	if _, err := c.UpdateOne(context.TODO(), filter, bson.M{"$set": update}); err != nil {
