@@ -86,8 +86,7 @@ func (b *BlogRepo) Update(id string, payload core.CreateBlogDto) (*core.Blog, *c
 
 	if _, err := c.UpdateOne(context.TODO(), filter, bson.M{"$set": update}); err != nil {
 		if err == mongo.ErrNoDocuments {
-			msg := "Object with given id not found"
-			log.Println(msg, err)
+			msg := logNoDocuments(err)
 			return nil, custom_errors.NotFoundError(msg)
 		} else {
 			msg := "Cannot find document"
@@ -103,6 +102,33 @@ func (b *BlogRepo) Update(id string, payload core.CreateBlogDto) (*core.Blog, *c
 		}
 		return blog, nil
 	}
+}
+
+func (b *BlogRepo) Delete(id string) *custom_errors.CustomError {
+	c := b.DB.Collection(constants.MongoCollections.BLOGS)
+	_id, err := ConvertToOjectId(id)
+	if err != nil {
+
+		return err
+	}
+	filter := bson.M{"_id": _id}
+	if res, err := c.DeleteOne(context.TODO(), filter); err != nil {
+		if err == mongo.ErrNoDocuments {
+			msg := logNoDocuments(err)
+			return custom_errors.NotFoundError(msg)
+		} else {
+			msg := "Cannot delete document"
+			log.Println(msg, err)
+			return custom_errors.InternalServerError(msg)
+		}
+	} else {
+		if res.DeletedCount == 0 {
+			msg := "Cannot delete document"
+			log.Println(msg, err)
+			return custom_errors.InternalServerError(msg)
+		}
+	}
+	return nil
 }
 
 func CreateBsonDObject(data map[string]interface{}) bson.D {
@@ -130,4 +156,10 @@ func ConvertToOjectId(id string) (*primitive.ObjectID, *custom_errors.CustomErro
 	} else {
 		return &_id, nil
 	}
+}
+
+func logNoDocuments(err error) string {
+	msg := "Document with given id not found"
+	log.Println(msg, err)
+	return msg
 }

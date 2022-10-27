@@ -40,6 +40,7 @@ func (a *App) Init() {
 	a.app.Post(createPath("/blog"), blogHandlers.Create)
 	a.app.Get(createPath("/blog/:id"), blogHandlers.Get)
 	a.app.Put(createPath("/blog/:id"), blogHandlers.Update)
+	a.app.Delete(createPath("/blog/:id"), blogHandlers.Delete)
 }
 
 func (a *App) Start() {

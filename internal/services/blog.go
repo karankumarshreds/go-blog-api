@@ -14,6 +14,7 @@ type BlogRepoPort interface {
 	Create(payload core.CreateBlogDto) (*primitive.ObjectID, *custom_errors.CustomError)
 	Get(id string) (*core.Blog, *custom_errors.CustomError)
 	Update(id string, payload core.CreateBlogDto) (*core.Blog, *custom_errors.CustomError)
+	Delete(id string) *custom_errors.CustomError
 }
 
 func NewBlogService(blogRepo BlogRepoPort) *BlogService {
@@ -30,4 +31,8 @@ func (b *BlogService) Get(id string) (*core.Blog, *custom_errors.CustomError) {
 
 func (b *BlogService) Update(id string, payload core.CreateBlogDto) (*core.Blog, *custom_errors.CustomError) {
 	return b.blogRepo.Update(id, payload)
+}
+
+func (b *BlogService) Delete(id string) *custom_errors.CustomError {
+	return b.blogRepo.Delete(id)
 }

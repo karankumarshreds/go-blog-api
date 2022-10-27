@@ -1,0 +1,1011 @@
+2022/10/27 17:09:15 Mongo connection successfull
+
+ ┌───────────────────────────────────────────────────┐ 
+ │                   Fiber v2.38.1                   │ 
+ │               http://127.0.0.1:8000               │ 
+ │       (bound on host 0.0.0.0 and port 8000)       │ 
+ │                                                   │ 
+ │ Handlers ............. 5  Processes ........... 1 │ 
+ │ Prefork ....... Disabled  PID ............ 338008 │ 
+ └───────────────────────────────────────────────────┘ 
+
+runtime: goroutine stack exceeds 1000000000-byte limit
+runtime: sp=0xc020740398 stack=[0xc020740000, 0xc040740000]
+fatal error: stack overflow
+
+runtime stack:
+runtime.throw({0xb36fb3?, 0x10576e0?})
+	/usr/local/go/src/runtime/panic.go:1047 +0x5d fp=0x7fafcccfcc18 sp=0x7fafcccfcbe8 pc=0x4376dd
+runtime.newstack()
+	/usr/local/go/src/runtime/stack.go:1103 +0x5cc fp=0x7fafcccfcdd0 sp=0x7fafcccfcc18 pc=0x45078c
+runtime.morestack()
+	/usr/local/go/src/runtime/asm_amd64.s:570 +0x8b fp=0x7fafcccfcdd8 sp=0x7fafcccfcdd0 pc=0x46590b
+
+goroutine 120 [running]:
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0xc0000a4490?, {0xc00049c27a?, 0x18?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:36 +0x3c fp=0xc0207403a8 sp=0xc0207403a0 pc=0xa2081c
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc0207403d0 sp=0xc0207403a8 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc0207403f8 sp=0xc0207403d0 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740420 sp=0xc0207403f8 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740448 sp=0xc020740420 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740470 sp=0xc020740448 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740498 sp=0xc020740470 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc0207404c0 sp=0xc020740498 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc0207404e8 sp=0xc0207404c0 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740510 sp=0xc0207404e8 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740538 sp=0xc020740510 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740560 sp=0xc020740538 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740588 sp=0xc020740560 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc0207405b0 sp=0xc020740588 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc0207405d8 sp=0xc0207405b0 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740600 sp=0xc0207405d8 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740628 sp=0xc020740600 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740650 sp=0xc020740628 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740678 sp=0xc020740650 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc0207406a0 sp=0xc020740678 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc0207406c8 sp=0xc0207406a0 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc0207406f0 sp=0xc0207406c8 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740718 sp=0xc0207406f0 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740740 sp=0xc020740718 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740768 sp=0xc020740740 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740790 sp=0xc020740768 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc0207407b8 sp=0xc020740790 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc0207407e0 sp=0xc0207407b8 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740808 sp=0xc0207407e0 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740830 sp=0xc020740808 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740858 sp=0xc020740830 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740880 sp=0xc020740858 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc0207408a8 sp=0xc020740880 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc0207408d0 sp=0xc0207408a8 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc0207408f8 sp=0xc0207408d0 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740920 sp=0xc0207408f8 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740948 sp=0xc020740920 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740970 sp=0xc020740948 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740998 sp=0xc020740970 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc0207409c0 sp=0xc020740998 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc0207409e8 sp=0xc0207409c0 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740a10 sp=0xc0207409e8 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740a38 sp=0xc020740a10 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740a60 sp=0xc020740a38 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740a88 sp=0xc020740a60 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740ab0 sp=0xc020740a88 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740ad8 sp=0xc020740ab0 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740b00 sp=0xc020740ad8 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740b28 sp=0xc020740b00 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740b50 sp=0xc020740b28 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740b78 sp=0xc020740b50 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740ba0 sp=0xc020740b78 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740bc8 sp=0xc020740ba0 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740bf0 sp=0xc020740bc8 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740c18 sp=0xc020740bf0 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740c40 sp=0xc020740c18 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740c68 sp=0xc020740c40 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740c90 sp=0xc020740c68 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740cb8 sp=0xc020740c90 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740ce0 sp=0xc020740cb8 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740d08 sp=0xc020740ce0 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740d30 sp=0xc020740d08 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740d58 sp=0xc020740d30 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740d80 sp=0xc020740d58 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740da8 sp=0xc020740d80 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740dd0 sp=0xc020740da8 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740df8 sp=0xc020740dd0 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740e20 sp=0xc020740df8 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740e48 sp=0xc020740e20 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740e70 sp=0xc020740e48 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740e98 sp=0xc020740e70 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740ec0 sp=0xc020740e98 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740ee8 sp=0xc020740ec0 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740f10 sp=0xc020740ee8 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740f38 sp=0xc020740f10 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740f60 sp=0xc020740f38 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740f88 sp=0xc020740f60 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740fb0 sp=0xc020740f88 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020740fd8 sp=0xc020740fb0 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020741000 sp=0xc020740fd8 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020741028 sp=0xc020741000 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020741050 sp=0xc020741028 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020741078 sp=0xc020741050 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc0207410a0 sp=0xc020741078 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc0207410c8 sp=0xc0207410a0 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc0207410f0 sp=0xc0207410c8 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020741118 sp=0xc0207410f0 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020741140 sp=0xc020741118 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020741168 sp=0xc020741140 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020741190 sp=0xc020741168 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc0207411b8 sp=0xc020741190 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc0207411e0 sp=0xc0207411b8 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020741208 sp=0xc0207411e0 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020741230 sp=0xc020741208 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020741258 sp=0xc020741230 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020741280 sp=0xc020741258 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc0207412a8 sp=0xc020741280 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc0207412d0 sp=0xc0207412a8 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc0207412f8 sp=0xc0207412d0 pc=0xa207fe
+github.com/karankumarshreds/go-blog-api/internal/services.(*BlogService).Delete(0x0?, {0xc00049c27a?, 0x0?})
+	/home/karan/Work/projects/go/assessment_crud_api/internal/services/blog.go:37 +0x1e fp=0xc020741320 sp=0xc0207412f8 pc=0xa207fe
+...additional frames elided...
+created by github.com/valyala/fasthttp.(*workerPool).getCh
+	/home/karan/go/pkg/mod/github.com/valyala/fasthttp@v1.40.0/workerpool.go:195 +0x1b0
+
+goroutine 1 [IO wait]:
+runtime.gopark(0x200000003?, 0xc0000061a0?, 0x0?, 0xe0?, 0xc000119ad8?)
+	/usr/local/go/src/runtime/proc.go:363 +0xd6 fp=0xc000119a68 sp=0xc000119a48 pc=0x43a2f6
+runtime.netpollblock(0xc000119ab8?, 0x119b30?, 0xc0?)
+	/usr/local/go/src/runtime/netpoll.go:526 +0xf7 fp=0xc000119aa0 sp=0xc000119a68 pc=0x432e17
+internal/poll.runtime_pollWait(0x7fafce5b4618, 0x72)
+	/usr/local/go/src/runtime/netpoll.go:305 +0x89 fp=0xc000119ac0 sp=0xc000119aa0 pc=0x462589
+internal/poll.(*pollDesc).wait(0xc0000d2080?, 0x10000100000006?, 0x0)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:84 +0x32 fp=0xc000119ae8 sp=0xc000119ac0 pc=0x4cc252
+internal/poll.(*pollDesc).waitRead(...)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Accept(0xc0000d2080)
+	/usr/local/go/src/internal/poll/fd_unix.go:614 +0x234 fp=0xc000119b80 sp=0xc000119ae8 pc=0x4d14d4
+net.(*netFD).accept(0xc0000d2080)
+	/usr/local/go/src/net/fd_unix.go:172 +0x35 fp=0xc000119c38 sp=0xc000119b80 pc=0x522555
+net.(*TCPListener).accept(0xc0000a01e0)
+	/usr/local/go/src/net/tcpsock_posix.go:142 +0x28 fp=0xc000119c68 sp=0xc000119c38 pc=0x53c4a8
+net.(*TCPListener).Accept(0xc0000a01e0)
+	/usr/local/go/src/net/tcpsock.go:288 +0x3d fp=0xc000119c98 sp=0xc000119c68 pc=0x53b67d
+github.com/valyala/fasthttp.acceptConn(0xc0000ea000, {0xcce3d0, 0xc0000a01e0?}, 0xc000119ea8)
+	/home/karan/go/pkg/mod/github.com/valyala/fasthttp@v1.40.0/server.go:1880 +0x142 fp=0xc000119d90 sp=0xc000119c98 pc=0x79ae22
+github.com/valyala/fasthttp.(*Server).Serve(0xc0000ea000, {0xcce3d0?, 0xc0000a01e0})
+	/home/karan/go/pkg/mod/github.com/valyala/fasthttp@v1.40.0/server.go:1774 +0x4fd fp=0xc000119ed8 sp=0xc000119d90 pc=0x79a55d
+github.com/gofiber/fiber/v2.(*App).Listen(0xc0000e8000, {0xc000380555?, 0xc0000a2028?})
+	/home/karan/go/pkg/mod/github.com/gofiber/fiber/v2@v2.38.1/listen.go:81 +0xd1 fp=0xc000119f28 sp=0xc000119ed8 pc=0x82fb71
+github.com/karankumarshreds/go-blog-api/cmd/app.(*App).Start(0xc000337f68)
+	/home/karan/Work/projects/go/assessment_crud_api/cmd/app/app.go:47 +0x46 fp=0xc000119f60 sp=0xc000119f28 pc=0xa22126
+main.main()
+	/home/karan/Work/projects/go/assessment_crud_api/cmd/main.go:8 +0x31 fp=0xc000119f80 sp=0xc000119f60 pc=0xa22831
+runtime.main()
+	/usr/local/go/src/runtime/proc.go:250 +0x212 fp=0xc000119fe0 sp=0xc000119f80 pc=0x439f32
+runtime.goexit()
+	/usr/local/go/src/runtime/asm_amd64.s:1594 +0x1 fp=0xc000119fe8 sp=0xc000119fe0 pc=0x4679e1
+
+goroutine 2 [force gc (idle)]:
+runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/usr/local/go/src/runtime/proc.go:363 +0xd6 fp=0xc00005efb0 sp=0xc00005ef90 pc=0x43a2f6
+runtime.goparkunlock(...)
+	/usr/local/go/src/runtime/proc.go:369
+runtime.forcegchelper()
+	/usr/local/go/src/runtime/proc.go:302 +0xad fp=0xc00005efe0 sp=0xc00005efb0 pc=0x43a18d
+runtime.goexit()
+	/usr/local/go/src/runtime/asm_amd64.s:1594 +0x1 fp=0xc00005efe8 sp=0xc00005efe0 pc=0x4679e1
+created by runtime.init.6
+	/usr/local/go/src/runtime/proc.go:290 +0x25
+
+goroutine 3 [GC sweep wait]:
+runtime.gopark(0x1?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/usr/local/go/src/runtime/proc.go:363 +0xd6 fp=0xc00005f790 sp=0xc00005f770 pc=0x43a2f6
+runtime.goparkunlock(...)
+	/usr/local/go/src/runtime/proc.go:369
+runtime.bgsweep(0x0?)
+	/usr/local/go/src/runtime/mgcsweep.go:297 +0xd7 fp=0xc00005f7c8 sp=0xc00005f790 pc=0x4269d7
+runtime.gcenable.func1()
+	/usr/local/go/src/runtime/mgc.go:178 +0x26 fp=0xc00005f7e0 sp=0xc00005f7c8 pc=0x41b646
+runtime.goexit()
+	/usr/local/go/src/runtime/asm_amd64.s:1594 +0x1 fp=0xc00005f7e8 sp=0xc00005f7e0 pc=0x4679e1
+created by runtime.gcenable
+	/usr/local/go/src/runtime/mgc.go:178 +0x6b
+
+goroutine 4 [GC scavenge wait]:
+runtime.gopark(0x1465904bf7ee0?, 0x7ff2c4?, 0x0?, 0x0?, 0x0?)
+	/usr/local/go/src/runtime/proc.go:363 +0xd6 fp=0xc00005ff70 sp=0xc00005ff50 pc=0x43a2f6
+runtime.goparkunlock(...)
+	/usr/local/go/src/runtime/proc.go:369
+runtime.(*scavengerState).park(0x11096c0)
+	/usr/local/go/src/runtime/mgcscavenge.go:389 +0x53 fp=0xc00005ffa0 sp=0xc00005ff70 pc=0x424a33
+runtime.bgscavenge(0x0?)
+	/usr/local/go/src/runtime/mgcscavenge.go:622 +0x65 fp=0xc00005ffc8 sp=0xc00005ffa0 pc=0x425025
+runtime.gcenable.func2()
+	/usr/local/go/src/runtime/mgc.go:179 +0x26 fp=0xc00005ffe0 sp=0xc00005ffc8 pc=0x41b5e6
+runtime.goexit()
+	/usr/local/go/src/runtime/asm_amd64.s:1594 +0x1 fp=0xc00005ffe8 sp=0xc00005ffe0 pc=0x4679e1
+created by runtime.gcenable
+	/usr/local/go/src/runtime/mgc.go:179 +0xaa
+
+goroutine 5 [finalizer wait]:
+runtime.gopark(0x110a5e0?, 0xc000007860?, 0x0?, 0x0?, 0xc00005e770?)
+	/usr/local/go/src/runtime/proc.go:363 +0xd6 fp=0xc00005e628 sp=0xc00005e608 pc=0x43a2f6
+runtime.goparkunlock(...)
+	/usr/local/go/src/runtime/proc.go:369
+runtime.runfinq()
+	/usr/local/go/src/runtime/mfinal.go:180 +0x10f fp=0xc00005e7e0 sp=0xc00005e628 pc=0x41a74f
+runtime.goexit()
+	/usr/local/go/src/runtime/asm_amd64.s:1594 +0x1 fp=0xc00005e7e8 sp=0xc00005e7e0 pc=0x4679e1
+created by runtime.createfing
+	/usr/local/go/src/runtime/mfinal.go:157 +0x45
+
+goroutine 18 [sync.Cond.Wait]:
+runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/usr/local/go/src/runtime/proc.go:363 +0xd6 fp=0xc00005a5c8 sp=0xc00005a5a8 pc=0x43a2f6
+runtime.goparkunlock(...)
+	/usr/local/go/src/runtime/proc.go:369
+sync.runtime_notifyListWait(0xc0000aa390, 0x0)
+	/usr/local/go/src/runtime/sema.go:517 +0x14c fp=0xc00005a610 sp=0xc00005a5c8 pc=0x46414c
+sync.(*Cond).Wait(0x0?)
+	/usr/local/go/src/sync/cond.go:70 +0x8c fp=0xc00005a648 sp=0xc00005a610 pc=0x46f78c
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*pool).createConnections.func2()
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/pool.go:805 +0xeb fp=0xc00005a6e8 sp=0xc00005a648 pc=0x9b9ceb
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*pool).createConnections(0xc0000d0000, {0xccea58, 0xc0000aa3c0}, 0x0?)
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/pool.go:827 +0x12a fp=0xc00005a7b0 sp=0xc00005a6e8 pc=0x9b996a
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.newPool.func3()
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/pool.go:195 +0x32 fp=0xc00005a7e0 sp=0xc00005a7b0 pc=0x9b6332
+runtime.goexit()
+	/usr/local/go/src/runtime/asm_amd64.s:1594 +0x1 fp=0xc00005a7e8 sp=0xc00005a7e0 pc=0x4679e1
+created by go.mongodb.org/mongo-driver/x/mongo/driver/topology.newPool
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/pool.go:195 +0x6d8
+
+goroutine 19 [sync.Cond.Wait]:
+runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/usr/local/go/src/runtime/proc.go:363 +0xd6 fp=0xc00005adc8 sp=0xc00005ada8 pc=0x43a2f6
+runtime.goparkunlock(...)
+	/usr/local/go/src/runtime/proc.go:369
+sync.runtime_notifyListWait(0xc0000aa390, 0x1)
+	/usr/local/go/src/runtime/sema.go:517 +0x14c fp=0xc00005ae10 sp=0xc00005adc8 pc=0x46414c
+sync.(*Cond).Wait(0x0?)
+	/usr/local/go/src/sync/cond.go:70 +0x8c fp=0xc00005ae48 sp=0xc00005ae10 pc=0x46f78c
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*pool).createConnections.func2()
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/pool.go:805 +0xeb fp=0xc00005aee8 sp=0xc00005ae48 pc=0x9b9ceb
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*pool).createConnections(0xc0000d0000, {0xccea58, 0xc0000aa3c0}, 0x0?)
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/pool.go:827 +0x12a fp=0xc00005afb0 sp=0xc00005aee8 pc=0x9b996a
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.newPool.func3()
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/pool.go:195 +0x32 fp=0xc00005afe0 sp=0xc00005afb0 pc=0x9b6332
+runtime.goexit()
+	/usr/local/go/src/runtime/asm_amd64.s:1594 +0x1 fp=0xc00005afe8 sp=0xc00005afe0 pc=0x4679e1
+created by go.mongodb.org/mongo-driver/x/mongo/driver/topology.newPool
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/pool.go:195 +0x6d8
+
+goroutine 20 [select]:
+runtime.gopark(0xc00005b758?, 0x3?, 0x0?, 0x30?, 0xc00005b6ca?)
+	/usr/local/go/src/runtime/proc.go:363 +0xd6 fp=0xc000070d28 sp=0xc000070d08 pc=0x43a2f6
+runtime.selectgo(0xc000070f58, 0xc00005b6c4, 0x0?, 0x0, 0x0?, 0x1)
+	/usr/local/go/src/runtime/select.go:328 +0x7bc fp=0xc000070e68 sp=0xc000070d28 pc=0x44965c
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*pool).maintain(0xc0000d0000, {0xccea58, 0xc0000aa3c0}, 0x0?)
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/pool.go:914 +0x218 fp=0xc000070fb0 sp=0xc000070e68 pc=0x9ba458
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.newPool.func4()
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/pool.go:202 +0x32 fp=0xc000070fe0 sp=0xc000070fb0 pc=0x9b62d2
+runtime.goexit()
+	/usr/local/go/src/runtime/asm_amd64.s:1594 +0x1 fp=0xc000070fe8 sp=0xc000070fe0 pc=0x4679e1
+created by go.mongodb.org/mongo-driver/x/mongo/driver/topology.newPool
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/pool.go:202 +0x8aa
+
+goroutine 21 [select]:
+runtime.gopark(0xc00031fec0?, 0x2?, 0x0?, 0x30?, 0xc00031fe7c?)
+	/usr/local/go/src/runtime/proc.go:363 +0xd6 fp=0xc00031fce8 sp=0xc00031fcc8 pc=0x43a2f6
+runtime.selectgo(0xc00031fec0, 0xc00031fe78, 0x0?, 0x0, 0x30?, 0x1)
+	/usr/local/go/src/runtime/select.go:328 +0x7bc fp=0xc00031fe28 sp=0xc00031fce8 pc=0x44965c
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*rttMonitor).runHellos(0xc0000c6090, 0xc000388f00)
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/rtt_monitor.go:139 +0x12d fp=0xc00031fef8 sp=0xc00031fe28 pc=0x9bc52d
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*rttMonitor).start(0xc0000c6090)
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/rtt_monitor.go:113 +0x145 fp=0xc00031ffc8 sp=0xc00031fef8 pc=0x9bc1c5
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*rttMonitor).connect.func1()
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/rtt_monitor.go:76 +0x26 fp=0xc00031ffe0 sp=0xc00031ffc8 pc=0x9bbfe6
+runtime.goexit()
+	/usr/local/go/src/runtime/asm_amd64.s:1594 +0x1 fp=0xc00031ffe8 sp=0xc00031ffe0 pc=0x4679e1
+created by go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*rttMonitor).connect
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/rtt_monitor.go:76 +0x6a
+
+goroutine 22 [IO wait]:
+runtime.gopark(0x0?, 0xb?, 0x0?, 0x0?, 0x9?)
+	/usr/local/go/src/runtime/proc.go:363 +0xd6 fp=0xc000469990 sp=0xc000469970 pc=0x43a2f6
+runtime.netpollblock(0x47aec5?, 0x10?, 0x0?)
+	/usr/local/go/src/runtime/netpoll.go:526 +0xf7 fp=0xc0004699c8 sp=0xc000469990 pc=0x432e17
+internal/poll.runtime_pollWait(0x7fafce5b4168, 0x72)
+	/usr/local/go/src/runtime/netpoll.go:305 +0x89 fp=0xc0004699e8 sp=0xc0004699c8 pc=0x462589
+internal/poll.(*pollDesc).wait(0xc0000d2180?, 0xc00074e000?, 0x0)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:84 +0x32 fp=0xc000469a10 sp=0xc0004699e8 pc=0x4cc252
+internal/poll.(*pollDesc).waitRead(...)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Read(0xc0000d2180, {0xc00074e000, 0x1000, 0x1000})
+	/usr/local/go/src/internal/poll/fd_unix.go:167 +0x25a fp=0xc000469a90 sp=0xc000469a10 pc=0x4cd5ba
+net.(*netFD).Read(0xc0000d2180, {0xc00074e000?, 0xc000280710?, 0x8?})
+	/usr/local/go/src/net/fd_posix.go:55 +0x29 fp=0xc000469ad8 sp=0xc000469a90 pc=0x520449
+net.(*conn).Read(0xc000014028, {0xc00074e000?, 0x20?, 0x1e?})
+	/usr/local/go/src/net/net.go:183 +0x45 fp=0xc000469b20 sp=0xc000469ad8 pc=0x5335e5
+crypto/tls.(*atLeastReader).Read(0xc0006205d0, {0xc00074e000?, 0x0?, 0xb3809e?})
+	/usr/local/go/src/crypto/tls/conn.go:787 +0x3d fp=0xc000469b68 sp=0xc000469b20 pc=0x61077d
+bytes.(*Buffer).ReadFrom(0xc0001125f8, {0xcca4c0, 0xc0006205d0})
+	/usr/local/go/src/bytes/buffer.go:202 +0x98 fp=0xc000469bc0 sp=0xc000469b68 pc=0x4f0818
+crypto/tls.(*Conn).readFromUntil(0xc000112380, {0xccb260?, 0xc000014028}, 0xf27101ef78c625eb?)
+	/usr/local/go/src/crypto/tls/conn.go:809 +0xe5 fp=0xc000469c00 sp=0xc000469bc0 pc=0x610965
+crypto/tls.(*Conn).readRecordOrCCS(0xc000112380, 0x0)
+	/usr/local/go/src/crypto/tls/conn.go:616 +0x116 fp=0xc000469f88 sp=0xc000469c00 pc=0x60ddb6
+crypto/tls.(*Conn).readRecord(...)
+	/usr/local/go/src/crypto/tls/conn.go:582
+crypto/tls.(*Conn).Read(0xc000112380, {0xc000280728, 0x4, 0x40cdb6?})
+	/usr/local/go/src/crypto/tls/conn.go:1287 +0x16f fp=0xc000469ff8 sp=0xc000469f88 pc=0x613a0f
+io.ReadAtLeast({0x7fafcc431200, 0xc000112380}, {0xc000280728, 0x4, 0x4}, 0x4)
+	/usr/local/go/src/io/io.go:332 +0x9a fp=0xc00046a040 sp=0xc000469ff8 pc=0x4c765a
+io.ReadFull(...)
+	/usr/local/go/src/io/io.go:351
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*connection).read(0xc0004a2000, {0xccea58?, 0xc000492040}, {0xc00060c500, 0xd7?, 0x100})
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/connection.go:439 +0x231 fp=0xc00046a138 sp=0xc00046a040 pc=0x9ada31
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*connection).readWireMessage(0xc0004a2000, {0xccea58, 0xc000492040}, {0xc00060c500, 0x0, 0x100})
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/connection.go:401 +0x1ea fp=0xc00046a288 sp=0xc00046a138 pc=0x9ad48a
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.initConnection.ReadWireMessage({0x100?}, {0xccea58?, 0xc000492040?}, {0xc00060c500?, 0x4b219961f?, 0xc00009e0f0?})
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/connection.go:567 +0x28 fp=0xc00046a2c8 sp=0xc00046a288 pc=0x9ae448
+go.mongodb.org/mongo-driver/x/mongo/driver.Operation.readWireMessage({0xc00048e0d0, {0xb32879, 0x5}, {0xccdd38, 0xc00048e0c0}, 0xc00048e0e0, {0x0, 0x0}, 0x0, 0x0, ...}, ...)
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/operation.go:794 +0x7e fp=0xc00046a410 sp=0xc00046a2c8 pc=0x91a13e
+go.mongodb.org/mongo-driver/x/mongo/driver.Operation.roundTrip({0xc00048e0d0, {0xb32879, 0x5}, {0xccdd38, 0xc00048e0c0}, 0xc00048e0e0, {0x0, 0x0}, 0x0, 0x0, ...}, ...)
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/operation.go:788 +0x150 fp=0xc00046a538 sp=0xc00046a410 pc=0x91a030
+go.mongodb.org/mongo-driver/x/mongo/driver.Operation.roundTrip-fm({0xccea58?, 0xc000492040?}, {0xcd1480?, 0xc0004a2000?}, {0xc00060c500?, 0xc00048e0e0?, 0x0?})
+	<autogenerated>:1 +0x9e fp=0xc00046a658 sp=0xc00046a538 pc=0x92b33e
+go.mongodb.org/mongo-driver/x/mongo/driver.Operation.Execute({0xc00048e0d0, {0xb32879, 0x5}, {0xccdd38, 0xc00048e0c0}, 0xc00048e0e0, {0x0, 0x0}, 0x0, 0x0, ...}, ...)
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/operation.go:553 +0x1523 fp=0xc00046c258 sp=0xc00046a658 pc=0x917603
+go.mongodb.org/mongo-driver/x/mongo/driver/operation.(*Hello).Execute(0xc00041e320, {0xccea58, 0xc000492040})
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/operation/hello.go:197 +0x197 fp=0xc00046c440 sp=0xc00046c258 pc=0x94c097
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*Server).check(_)
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/server.go:755 +0x4b4 fp=0xc00046d448 sp=0xc00046c440 pc=0x9c1974
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*Server).update(0xc0000ca000)
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/server.go:536 +0x31d fp=0xc00046dfc8 sp=0xc00046d448 pc=0x9bff3d
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*Server).Connect.func1()
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/server.go:207 +0x26 fp=0xc00046dfe0 sp=0xc00046dfc8 pc=0x9bdb66
+runtime.goexit()
+	/usr/local/go/src/runtime/asm_amd64.s:1594 +0x1 fp=0xc00046dfe8 sp=0xc00046dfe0 pc=0x4679e1
+created by go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*Server).Connect
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/server.go:207 +0x1b9
+
+goroutine 23 [sync.Cond.Wait]:
+runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/usr/local/go/src/runtime/proc.go:363 +0xd6 fp=0xc000484dc8 sp=0xc000484da8 pc=0x43a2f6
+runtime.goparkunlock(...)
+	/usr/local/go/src/runtime/proc.go:369
+sync.runtime_notifyListWait(0xc0000aa490, 0x0)
+	/usr/local/go/src/runtime/sema.go:517 +0x14c fp=0xc000484e10 sp=0xc000484dc8 pc=0x46414c
+sync.(*Cond).Wait(0x0?)
+	/usr/local/go/src/sync/cond.go:70 +0x8c fp=0xc000484e48 sp=0xc000484e10 pc=0x46f78c
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*pool).createConnections.func2()
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/pool.go:805 +0xeb fp=0xc000484ee8 sp=0xc000484e48 pc=0x9b9ceb
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*pool).createConnections(0xc0000d0160, {0xccea58, 0xc0000aa4c0}, 0x0?)
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/pool.go:827 +0x12a fp=0xc000484fb0 sp=0xc000484ee8 pc=0x9b996a
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.newPool.func3()
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/pool.go:195 +0x32 fp=0xc000484fe0 sp=0xc000484fb0 pc=0x9b6332
+runtime.goexit()
+	/usr/local/go/src/runtime/asm_amd64.s:1594 +0x1 fp=0xc000484fe8 sp=0xc000484fe0 pc=0x4679e1
+created by go.mongodb.org/mongo-driver/x/mongo/driver/topology.newPool
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/pool.go:195 +0x6d8
+
+goroutine 24 [sync.Cond.Wait]:
+runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/usr/local/go/src/runtime/proc.go:363 +0xd6 fp=0xc000480dc8 sp=0xc000480da8 pc=0x43a2f6
+runtime.goparkunlock(...)
+	/usr/local/go/src/runtime/proc.go:369
+sync.runtime_notifyListWait(0xc0000aa490, 0x1)
+	/usr/local/go/src/runtime/sema.go:517 +0x14c fp=0xc000480e10 sp=0xc000480dc8 pc=0x46414c
+sync.(*Cond).Wait(0x0?)
+	/usr/local/go/src/sync/cond.go:70 +0x8c fp=0xc000480e48 sp=0xc000480e10 pc=0x46f78c
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*pool).createConnections.func2()
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/pool.go:805 +0xeb fp=0xc000480ee8 sp=0xc000480e48 pc=0x9b9ceb
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*pool).createConnections(0xc0000d0160, {0xccea58, 0xc0000aa4c0}, 0x0?)
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/pool.go:827 +0x12a fp=0xc000480fb0 sp=0xc000480ee8 pc=0x9b996a
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.newPool.func3()
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/pool.go:195 +0x32 fp=0xc000480fe0 sp=0xc000480fb0 pc=0x9b6332
+runtime.goexit()
+	/usr/local/go/src/runtime/asm_amd64.s:1594 +0x1 fp=0xc000480fe8 sp=0xc000480fe0 pc=0x4679e1
+created by go.mongodb.org/mongo-driver/x/mongo/driver/topology.newPool
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/pool.go:195 +0x6d8
+
+goroutine 25 [select]:
+runtime.gopark(0xc00005df58?, 0x3?, 0x0?, 0x30?, 0xc00005deca?)
+	/usr/local/go/src/runtime/proc.go:363 +0xd6 fp=0xc00006fd28 sp=0xc00006fd08 pc=0x43a2f6
+runtime.selectgo(0xc00006ff58, 0xc00005dec4, 0x0?, 0x0, 0x0?, 0x1)
+	/usr/local/go/src/runtime/select.go:328 +0x7bc fp=0xc00006fe68 sp=0xc00006fd28 pc=0x44965c
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*pool).maintain(0xc0000d0160, {0xccea58, 0xc0000aa4c0}, 0x0?)
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/pool.go:914 +0x218 fp=0xc00006ffb0 sp=0xc00006fe68 pc=0x9ba458
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.newPool.func4()
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/pool.go:202 +0x32 fp=0xc00006ffe0 sp=0xc00006ffb0 pc=0x9b62d2
+runtime.goexit()
+	/usr/local/go/src/runtime/asm_amd64.s:1594 +0x1 fp=0xc00006ffe8 sp=0xc00006ffe0 pc=0x4679e1
+created by go.mongodb.org/mongo-driver/x/mongo/driver/topology.newPool
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/pool.go:202 +0x8aa
+
+goroutine 26 [select]:
+runtime.gopark(0xc000129ec0?, 0x2?, 0x40?, 0xc5?, 0xc000129e7c?)
+	/usr/local/go/src/runtime/proc.go:363 +0xd6 fp=0xc000129ce8 sp=0xc000129cc8 pc=0x43a2f6
+runtime.selectgo(0xc000129ec0, 0xc000129e78, 0x0?, 0x0, 0x30?, 0x1)
+	/usr/local/go/src/runtime/select.go:328 +0x7bc fp=0xc000129e28 sp=0xc000129ce8 pc=0x44965c
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*rttMonitor).runHellos(0xc0000c6120, 0xc000428000)
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/rtt_monitor.go:139 +0x12d fp=0xc000129ef8 sp=0xc000129e28 pc=0x9bc52d
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*rttMonitor).start(0xc0000c6120)
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/rtt_monitor.go:113 +0x145 fp=0xc000129fc8 sp=0xc000129ef8 pc=0x9bc1c5
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*rttMonitor).connect.func1()
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/rtt_monitor.go:76 +0x26 fp=0xc000129fe0 sp=0xc000129fc8 pc=0x9bbfe6
+runtime.goexit()
+	/usr/local/go/src/runtime/asm_amd64.s:1594 +0x1 fp=0xc000129fe8 sp=0xc000129fe0 pc=0x4679e1
+created by go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*rttMonitor).connect
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/rtt_monitor.go:76 +0x6a
+
+goroutine 27 [IO wait]:
+runtime.gopark(0x0?, 0xb?, 0x0?, 0x0?, 0x7?)
+	/usr/local/go/src/runtime/proc.go:363 +0xd6 fp=0xc0003d7990 sp=0xc0003d7970 pc=0x43a2f6
+runtime.netpollblock(0x47aec5?, 0x10?, 0x0?)
+	/usr/local/go/src/runtime/netpoll.go:526 +0xf7 fp=0xc0003d79c8 sp=0xc0003d7990 pc=0x432e17
+internal/poll.runtime_pollWait(0x7fafce5b4348, 0x72)
+	/usr/local/go/src/runtime/netpoll.go:305 +0x89 fp=0xc0003d79e8 sp=0xc0003d79c8 pc=0x462589
+internal/poll.(*pollDesc).wait(0xc0004c0080?, 0xc00038d000?, 0x0)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:84 +0x32 fp=0xc0003d7a10 sp=0xc0003d79e8 pc=0x4cc252
+internal/poll.(*pollDesc).waitRead(...)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Read(0xc0004c0080, {0xc00038d000, 0x1000, 0x1000})
+	/usr/local/go/src/internal/poll/fd_unix.go:167 +0x25a fp=0xc0003d7a90 sp=0xc0003d7a10 pc=0x4cd5ba
+net.(*netFD).Read(0xc0004c0080, {0xc00038d000?, 0xc0007382e0?, 0x8?})
+	/usr/local/go/src/net/fd_posix.go:55 +0x29 fp=0xc0003d7ad8 sp=0xc0003d7a90 pc=0x520449
+net.(*conn).Read(0xc000014008, {0xc00038d000?, 0x20?, 0x1e?})
+	/usr/local/go/src/net/net.go:183 +0x45 fp=0xc0003d7b20 sp=0xc0003d7ad8 pc=0x5335e5
+crypto/tls.(*atLeastReader).Read(0xc000750150, {0xc00038d000?, 0x0?, 0xb3809e?})
+	/usr/local/go/src/crypto/tls/conn.go:787 +0x3d fp=0xc0003d7b68 sp=0xc0003d7b20 pc=0x61077d
+bytes.(*Buffer).ReadFrom(0xc000112278, {0xcca4c0, 0xc000750150})
+	/usr/local/go/src/bytes/buffer.go:202 +0x98 fp=0xc0003d7bc0 sp=0xc0003d7b68 pc=0x4f0818
+crypto/tls.(*Conn).readFromUntil(0xc000112000, {0xccb260?, 0xc000014008}, 0x84f9c7387eb63421?)
+	/usr/local/go/src/crypto/tls/conn.go:809 +0xe5 fp=0xc0003d7c00 sp=0xc0003d7bc0 pc=0x610965
+crypto/tls.(*Conn).readRecordOrCCS(0xc000112000, 0x0)
+	/usr/local/go/src/crypto/tls/conn.go:616 +0x116 fp=0xc0003d7f88 sp=0xc0003d7c00 pc=0x60ddb6
+crypto/tls.(*Conn).readRecord(...)
+	/usr/local/go/src/crypto/tls/conn.go:582
+crypto/tls.(*Conn).Read(0xc000112000, {0xc0007382fc, 0x4, 0x40cdb6?})
+	/usr/local/go/src/crypto/tls/conn.go:1287 +0x16f fp=0xc0003d7ff8 sp=0xc0003d7f88 pc=0x613a0f
+io.ReadAtLeast({0x7fafcc431200, 0xc000112000}, {0xc0007382fc, 0x4, 0x4}, 0x4)
+	/usr/local/go/src/io/io.go:332 +0x9a fp=0xc0003d8040 sp=0xc0003d7ff8 pc=0x4c765a
+io.ReadFull(...)
+	/usr/local/go/src/io/io.go:351
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*connection).read(0xc0004a2280, {0xccea58?, 0xc0004921c0}, {0xc00040c200, 0xc0004882a0?, 0x100})
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/connection.go:439 +0x231 fp=0xc0003d8138 sp=0xc0003d8040 pc=0x9ada31
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*connection).readWireMessage(0xc0004a2280, {0xccea58, 0xc0004921c0}, {0xc00040c200, 0x0, 0x100})
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/connection.go:401 +0x1ea fp=0xc0003d8288 sp=0xc0003d8138 pc=0x9ad48a
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.initConnection.ReadWireMessage({0x100?}, {0xccea58?, 0xc0004921c0?}, {0xc00040c200?, 0x4b22cadff?, 0xc00009e120?})
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/connection.go:567 +0x28 fp=0xc0003d82c8 sp=0xc0003d8288 pc=0x9ae448
+go.mongodb.org/mongo-driver/x/mongo/driver.Operation.readWireMessage({0xc000626070, {0xb32879, 0x5}, {0xccdd38, 0xc000626010}, 0xc000626080, {0x0, 0x0}, 0x0, 0x0, ...}, ...)
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/operation.go:794 +0x7e fp=0xc0003d8410 sp=0xc0003d82c8 pc=0x91a13e
+go.mongodb.org/mongo-driver/x/mongo/driver.Operation.roundTrip({0xc000626070, {0xb32879, 0x5}, {0xccdd38, 0xc000626010}, 0xc000626080, {0x0, 0x0}, 0x0, 0x0, ...}, ...)
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/operation.go:788 +0x150 fp=0xc0003d8538 sp=0xc0003d8410 pc=0x91a030
+go.mongodb.org/mongo-driver/x/mongo/driver.Operation.roundTrip-fm({0xccea58?, 0xc0004921c0?}, {0xcd1480?, 0xc0004a2280?}, {0xc00040c200?, 0xc000626080?, 0x0?})
+	<autogenerated>:1 +0x9e fp=0xc0003d8658 sp=0xc0003d8538 pc=0x92b33e
+go.mongodb.org/mongo-driver/x/mongo/driver.Operation.Execute({0xc000626070, {0xb32879, 0x5}, {0xccdd38, 0xc000626010}, 0xc000626080, {0x0, 0x0}, 0x0, 0x0, ...}, ...)
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/operation.go:553 +0x1523 fp=0xc0003da258 sp=0xc0003d8658 pc=0x917603
+go.mongodb.org/mongo-driver/x/mongo/driver/operation.(*Hello).Execute(0xc0000e20a0, {0xccea58, 0xc0004921c0})
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/operation/hello.go:197 +0x197 fp=0xc0003da440 sp=0xc0003da258 pc=0x94c097
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*Server).check(_)
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/server.go:755 +0x4b4 fp=0xc0003db448 sp=0xc0003da440 pc=0x9c1974
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*Server).update(0xc0000ca100)
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/server.go:536 +0x31d fp=0xc0003dbfc8 sp=0xc0003db448 pc=0x9bff3d
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*Server).Connect.func1()
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/server.go:207 +0x26 fp=0xc0003dbfe0 sp=0xc0003dbfc8 pc=0x9bdb66
+runtime.goexit()
+	/usr/local/go/src/runtime/asm_amd64.s:1594 +0x1 fp=0xc0003dbfe8 sp=0xc0003dbfe0 pc=0x4679e1
+created by go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*Server).Connect
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/server.go:207 +0x1b9
+
+goroutine 28 [sync.Cond.Wait]:
+runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/usr/local/go/src/runtime/proc.go:363 +0xd6 fp=0xc0000d95c8 sp=0xc0000d95a8 pc=0x43a2f6
+runtime.goparkunlock(...)
+	/usr/local/go/src/runtime/proc.go:369
+sync.runtime_notifyListWait(0xc0000aa590, 0x1)
+	/usr/local/go/src/runtime/sema.go:517 +0x14c fp=0xc0000d9610 sp=0xc0000d95c8 pc=0x46414c
+sync.(*Cond).Wait(0x0?)
+	/usr/local/go/src/sync/cond.go:70 +0x8c fp=0xc0000d9648 sp=0xc0000d9610 pc=0x46f78c
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*pool).createConnections.func2()
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/pool.go:805 +0xeb fp=0xc0000d96e8 sp=0xc0000d9648 pc=0x9b9ceb
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*pool).createConnections(0xc0000d02c0, {0xccea58, 0xc0000aa5c0}, 0x0?)
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/pool.go:827 +0x12a fp=0xc0000d97b0 sp=0xc0000d96e8 pc=0x9b996a
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.newPool.func3()
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/pool.go:195 +0x32 fp=0xc0000d97e0 sp=0xc0000d97b0 pc=0x9b6332
+runtime.goexit()
+	/usr/local/go/src/runtime/asm_amd64.s:1594 +0x1 fp=0xc0000d97e8 sp=0xc0000d97e0 pc=0x4679e1
+created by go.mongodb.org/mongo-driver/x/mongo/driver/topology.newPool
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/pool.go:195 +0x6d8
+
+goroutine 29 [sync.Cond.Wait]:
+runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/usr/local/go/src/runtime/proc.go:363 +0xd6 fp=0xc00006adc8 sp=0xc00006ada8 pc=0x43a2f6
+runtime.goparkunlock(...)
+	/usr/local/go/src/runtime/proc.go:369
+sync.runtime_notifyListWait(0xc0000aa590, 0x0)
+	/usr/local/go/src/runtime/sema.go:517 +0x14c fp=0xc00006ae10 sp=0xc00006adc8 pc=0x46414c
+sync.(*Cond).Wait(0x0?)
+	/usr/local/go/src/sync/cond.go:70 +0x8c fp=0xc00006ae48 sp=0xc00006ae10 pc=0x46f78c
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*pool).createConnections.func2()
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/pool.go:805 +0xeb fp=0xc00006aee8 sp=0xc00006ae48 pc=0x9b9ceb
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*pool).createConnections(0xc0000d02c0, {0xccea58, 0xc0000aa5c0}, 0x0?)
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/pool.go:827 +0x12a fp=0xc00006afb0 sp=0xc00006aee8 pc=0x9b996a
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.newPool.func3()
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/pool.go:195 +0x32 fp=0xc00006afe0 sp=0xc00006afb0 pc=0x9b6332
+runtime.goexit()
+	/usr/local/go/src/runtime/asm_amd64.s:1594 +0x1 fp=0xc00006afe8 sp=0xc00006afe0 pc=0x4679e1
+created by go.mongodb.org/mongo-driver/x/mongo/driver/topology.newPool
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/pool.go:195 +0x6d8
+
+goroutine 30 [select]:
+runtime.gopark(0xc0000da758?, 0x3?, 0x0?, 0x30?, 0xc0000da6ca?)
+	/usr/local/go/src/runtime/proc.go:363 +0xd6 fp=0xc000485d28 sp=0xc000485d08 pc=0x43a2f6
+runtime.selectgo(0xc000485f58, 0xc0000da6c4, 0x0?, 0x0, 0x0?, 0x1)
+	/usr/local/go/src/runtime/select.go:328 +0x7bc fp=0xc000485e68 sp=0xc000485d28 pc=0x44965c
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*pool).maintain(0xc0000d02c0, {0xccea58, 0xc0000aa5c0}, 0x0?)
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/pool.go:914 +0x218 fp=0xc000485fb0 sp=0xc000485e68 pc=0x9ba458
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.newPool.func4()
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/pool.go:202 +0x32 fp=0xc000485fe0 sp=0xc000485fb0 pc=0x9b62d2
+runtime.goexit()
+	/usr/local/go/src/runtime/asm_amd64.s:1594 +0x1 fp=0xc000485fe8 sp=0xc000485fe0 pc=0x4679e1
+created by go.mongodb.org/mongo-driver/x/mongo/driver/topology.newPool
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/pool.go:202 +0x8aa
+
+goroutine 31 [select]:
+runtime.gopark(0xc0005e1ec0?, 0x2?, 0x40?, 0xc5?, 0xc0005e1e7c?)
+	/usr/local/go/src/runtime/proc.go:363 +0xd6 fp=0xc0005e1ce8 sp=0xc0005e1cc8 pc=0x43a2f6
+runtime.selectgo(0xc0005e1ec0, 0xc0005e1e78, 0x0?, 0x0, 0x30?, 0x1)
+	/usr/local/go/src/runtime/select.go:328 +0x7bc fp=0xc0005e1e28 sp=0xc0005e1ce8 pc=0x44965c
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*rttMonitor).runHellos(0xc0000c61b0, 0xc000528000)
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/rtt_monitor.go:139 +0x12d fp=0xc0005e1ef8 sp=0xc0005e1e28 pc=0x9bc52d
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*rttMonitor).start(0xc0000c61b0)
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/rtt_monitor.go:113 +0x145 fp=0xc0005e1fc8 sp=0xc0005e1ef8 pc=0x9bc1c5
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*rttMonitor).connect.func1()
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/rtt_monitor.go:76 +0x26 fp=0xc0005e1fe0 sp=0xc0005e1fc8 pc=0x9bbfe6
+runtime.goexit()
+	/usr/local/go/src/runtime/asm_amd64.s:1594 +0x1 fp=0xc0005e1fe8 sp=0xc0005e1fe0 pc=0x4679e1
+created by go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*rttMonitor).connect
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/rtt_monitor.go:76 +0x6a
+
+goroutine 32 [IO wait]:
+runtime.gopark(0x0?, 0xb?, 0x0?, 0x0?, 0x8?)
+	/usr/local/go/src/runtime/proc.go:363 +0xd6 fp=0xc00055f990 sp=0xc00055f970 pc=0x43a2f6
+runtime.netpollblock(0x47aec5?, 0x10?, 0x0?)
+	/usr/local/go/src/runtime/netpoll.go:526 +0xf7 fp=0xc00055f9c8 sp=0xc00055f990 pc=0x432e17
+internal/poll.runtime_pollWait(0x7fafce5b4528, 0x72)
+	/usr/local/go/src/runtime/netpoll.go:305 +0x89 fp=0xc00055f9e8 sp=0xc00055f9c8 pc=0x462589
+internal/poll.(*pollDesc).wait(0xc0000d2000?, 0xc0004da000?, 0x0)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:84 +0x32 fp=0xc00055fa10 sp=0xc00055f9e8 pc=0x4cc252
+internal/poll.(*pollDesc).waitRead(...)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Read(0xc0000d2000, {0xc0004da000, 0x1000, 0x1000})
+	/usr/local/go/src/internal/poll/fd_unix.go:167 +0x25a fp=0xc00055fa90 sp=0xc00055fa10 pc=0x4cd5ba
+net.(*netFD).Read(0xc0000d2000, {0xc0004da000?, 0xc0002809d0?, 0x8?})
+	/usr/local/go/src/net/fd_posix.go:55 +0x29 fp=0xc00055fad8 sp=0xc00055fa90 pc=0x520449
+net.(*conn).Read(0xc000414018, {0xc0004da000?, 0x20?, 0x1e?})
+	/usr/local/go/src/net/net.go:183 +0x45 fp=0xc00055fb20 sp=0xc00055fad8 pc=0x5335e5
+crypto/tls.(*atLeastReader).Read(0xc0006207b0, {0xc0004da000?, 0x0?, 0xb3809e?})
+	/usr/local/go/src/crypto/tls/conn.go:787 +0x3d fp=0xc00055fb68 sp=0xc00055fb20 pc=0x61077d
+bytes.(*Buffer).ReadFrom(0xc0000bd3f8, {0xcca4c0, 0xc0006207b0})
+	/usr/local/go/src/bytes/buffer.go:202 +0x98 fp=0xc00055fbc0 sp=0xc00055fb68 pc=0x4f0818
+crypto/tls.(*Conn).readFromUntil(0xc0000bd180, {0xccb260?, 0xc000414018}, 0x531d985d55487b56?)
+	/usr/local/go/src/crypto/tls/conn.go:809 +0xe5 fp=0xc00055fc00 sp=0xc00055fbc0 pc=0x610965
+crypto/tls.(*Conn).readRecordOrCCS(0xc0000bd180, 0x0)
+	/usr/local/go/src/crypto/tls/conn.go:616 +0x116 fp=0xc00055ff88 sp=0xc00055fc00 pc=0x60ddb6
+crypto/tls.(*Conn).readRecord(...)
+	/usr/local/go/src/crypto/tls/conn.go:582
+crypto/tls.(*Conn).Read(0xc0000bd180, {0xc0002809e8, 0x4, 0x40cdb6?})
+	/usr/local/go/src/crypto/tls/conn.go:1287 +0x16f fp=0xc00055fff8 sp=0xc00055ff88 pc=0x613a0f
+io.ReadAtLeast({0x7fafcc431200, 0xc0000bd180}, {0xc0002809e8, 0x4, 0x4}, 0x4)
+	/usr/local/go/src/io/io.go:332 +0x9a fp=0xc000560040 sp=0xc00055fff8 pc=0x4c765a
+io.ReadFull(...)
+	/usr/local/go/src/io/io.go:351
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*connection).read(0xc000638000, {0xccea58?, 0xc000418140}, {0xc00060c600, 0xc00058c120?, 0x100})
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/connection.go:439 +0x231 fp=0xc000560138 sp=0xc000560040 pc=0x9ada31
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*connection).readWireMessage(0xc000638000, {0xccea58, 0xc000418140}, {0xc00060c600, 0x0, 0x100})
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/connection.go:401 +0x1ea fp=0xc000560288 sp=0xc000560138 pc=0x9ad48a
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.initConnection.ReadWireMessage({0x100?}, {0xccea58?, 0xc000418140?}, {0xc00060c600?, 0x4b22d5ad0?, 0xc00009e150?})
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/connection.go:567 +0x28 fp=0xc0005602c8 sp=0xc000560288 pc=0x9ae448
+go.mongodb.org/mongo-driver/x/mongo/driver.Operation.readWireMessage({0xc00048e140, {0xb32879, 0x5}, {0xccdd38, 0xc00048e130}, 0xc00048e150, {0x0, 0x0}, 0x0, 0x0, ...}, ...)
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/operation.go:794 +0x7e fp=0xc000560410 sp=0xc0005602c8 pc=0x91a13e
+go.mongodb.org/mongo-driver/x/mongo/driver.Operation.roundTrip({0xc00048e140, {0xb32879, 0x5}, {0xccdd38, 0xc00048e130}, 0xc00048e150, {0x0, 0x0}, 0x0, 0x0, ...}, ...)
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/operation.go:788 +0x150 fp=0xc000560538 sp=0xc000560410 pc=0x91a030
+go.mongodb.org/mongo-driver/x/mongo/driver.Operation.roundTrip-fm({0xccea58?, 0xc000418140?}, {0xcd1480?, 0xc000638000?}, {0xc00060c600?, 0xc00048e150?, 0x0?})
+	<autogenerated>:1 +0x9e fp=0xc000560658 sp=0xc000560538 pc=0x92b33e
+go.mongodb.org/mongo-driver/x/mongo/driver.Operation.Execute({0xc00048e140, {0xb32879, 0x5}, {0xccdd38, 0xc00048e130}, 0xc00048e150, {0x0, 0x0}, 0x0, 0x0, ...}, ...)
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/operation.go:553 +0x1523 fp=0xc000562258 sp=0xc000560658 pc=0x917603
+go.mongodb.org/mongo-driver/x/mongo/driver/operation.(*Hello).Execute(0xc00041e3c0, {0xccea58, 0xc000418140})
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/operation/hello.go:197 +0x197 fp=0xc000562440 sp=0xc000562258 pc=0x94c097
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*Server).check(_)
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/server.go:755 +0x4b4 fp=0xc000563448 sp=0xc000562440 pc=0x9c1974
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*Server).update(0xc0000ca200)
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/server.go:536 +0x31d fp=0xc000563fc8 sp=0xc000563448 pc=0x9bff3d
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*Server).Connect.func1()
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/server.go:207 +0x26 fp=0xc000563fe0 sp=0xc000563fc8 pc=0x9bdb66
+runtime.goexit()
+	/usr/local/go/src/runtime/asm_amd64.s:1594 +0x1 fp=0xc000563fe8 sp=0xc000563fe0 pc=0x4679e1
+created by go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*Server).Connect
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/server.go:207 +0x1b9
+
+goroutine 33 [select]:
+runtime.gopark(0xc0000dbec0?, 0x2?, 0x0?, 0x30?, 0xc0000dbe34?)
+	/usr/local/go/src/runtime/proc.go:363 +0xd6 fp=0xc000486c90 sp=0xc000486c70 pc=0x43a2f6
+runtime.selectgo(0xc000486ec0, 0xc0000dbe30, 0xb31ddf?, 0x0, 0x0?, 0x1)
+	/usr/local/go/src/runtime/select.go:328 +0x7bc fp=0xc000486dd0 sp=0xc000486c90 pc=0x44965c
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*Topology).pollSRVRecords(0xc0000c0000)
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/topology.go:580 +0x245 fp=0xc000486fc8 sp=0xc000486dd0 pc=0x9c7685
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*Topology).Connect.func1()
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/topology.go:233 +0x26 fp=0xc000486fe0 sp=0xc000486fc8 pc=0x9c4906
+runtime.goexit()
+	/usr/local/go/src/runtime/asm_amd64.s:1594 +0x1 fp=0xc000486fe8 sp=0xc000486fe0 pc=0x4679e1
+created by go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*Topology).Connect
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/topology.go:233 +0x82a
+
+goroutine 66 [GC worker (idle)]:
+runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/usr/local/go/src/runtime/proc.go:363 +0xd6 fp=0xc0000db750 sp=0xc0000db730 pc=0x43a2f6
+runtime.gcBgMarkWorker()
+	/usr/local/go/src/runtime/mgc.go:1235 +0xf1 fp=0xc0000db7e0 sp=0xc0000db750 pc=0x41d791
+runtime.goexit()
+	/usr/local/go/src/runtime/asm_amd64.s:1594 +0x1 fp=0xc0000db7e8 sp=0xc0000db7e0 pc=0x4679e1
+created by runtime.gcBgMarkStartWorkers
+	/usr/local/go/src/runtime/mgc.go:1159 +0x25
+
+goroutine 82 [GC worker (idle)]:
+runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/usr/local/go/src/runtime/proc.go:363 +0xd6 fp=0xc0000d4750 sp=0xc0000d4730 pc=0x43a2f6
+runtime.gcBgMarkWorker()
+	/usr/local/go/src/runtime/mgc.go:1235 +0xf1 fp=0xc0000d47e0 sp=0xc0000d4750 pc=0x41d791
+runtime.goexit()
+	/usr/local/go/src/runtime/asm_amd64.s:1594 +0x1 fp=0xc0000d47e8 sp=0xc0000d47e0 pc=0x4679e1
+created by runtime.gcBgMarkStartWorkers
+	/usr/local/go/src/runtime/mgc.go:1159 +0x25
+
+goroutine 83 [GC worker (idle)]:
+runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/usr/local/go/src/runtime/proc.go:363 +0xd6 fp=0xc0000d4f50 sp=0xc0000d4f30 pc=0x43a2f6
+runtime.gcBgMarkWorker()
+	/usr/local/go/src/runtime/mgc.go:1235 +0xf1 fp=0xc0000d4fe0 sp=0xc0000d4f50 pc=0x41d791
+runtime.goexit()
+	/usr/local/go/src/runtime/asm_amd64.s:1594 +0x1 fp=0xc0000d4fe8 sp=0xc0000d4fe0 pc=0x4679e1
+created by runtime.gcBgMarkStartWorkers
+	/usr/local/go/src/runtime/mgc.go:1159 +0x25
+
+goroutine 36 [GC worker (idle)]:
+runtime.gopark(0x9ba060?, 0xc0000d02c0?, 0x58?, 0xea?, 0xc0000aa5c0?)
+	/usr/local/go/src/runtime/proc.go:363 +0xd6 fp=0xc0000d9f50 sp=0xc0000d9f30 pc=0x43a2f6
+runtime.gcBgMarkWorker()
+	/usr/local/go/src/runtime/mgc.go:1235 +0xf1 fp=0xc0000d9fe0 sp=0xc0000d9f50 pc=0x41d791
+runtime.goexit()
+	/usr/local/go/src/runtime/asm_amd64.s:1594 +0x1 fp=0xc0000d9fe8 sp=0xc0000d9fe0 pc=0x4679e1
+created by runtime.gcBgMarkStartWorkers
+	/usr/local/go/src/runtime/mgc.go:1159 +0x25
+
+goroutine 37 [GC worker (idle)]:
+runtime.gopark(0x146590544fd90?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/usr/local/go/src/runtime/proc.go:363 +0xd6 fp=0xc000446750 sp=0xc000446730 pc=0x43a2f6
+runtime.gcBgMarkWorker()
+	/usr/local/go/src/runtime/mgc.go:1235 +0xf1 fp=0xc0004467e0 sp=0xc000446750 pc=0x41d791
+runtime.goexit()
+	/usr/local/go/src/runtime/asm_amd64.s:1594 +0x1 fp=0xc0004467e8 sp=0xc0004467e0 pc=0x4679e1
+created by runtime.gcBgMarkStartWorkers
+	/usr/local/go/src/runtime/mgc.go:1159 +0x25
+
+goroutine 38 [GC worker (idle)]:
+runtime.gopark(0x146590546bfec?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/usr/local/go/src/runtime/proc.go:363 +0xd6 fp=0xc000446f50 sp=0xc000446f30 pc=0x43a2f6
+runtime.gcBgMarkWorker()
+	/usr/local/go/src/runtime/mgc.go:1235 +0xf1 fp=0xc000446fe0 sp=0xc000446f50 pc=0x41d791
+runtime.goexit()
+	/usr/local/go/src/runtime/asm_amd64.s:1594 +0x1 fp=0xc000446fe8 sp=0xc000446fe0 pc=0x4679e1
+created by runtime.gcBgMarkStartWorkers
+	/usr/local/go/src/runtime/mgc.go:1159 +0x25
+
+goroutine 39 [GC worker (idle)]:
+runtime.gopark(0x113c540?, 0x1?, 0xe9?, 0x7a?, 0x0?)
+	/usr/local/go/src/runtime/proc.go:363 +0xd6 fp=0xc000447750 sp=0xc000447730 pc=0x43a2f6
+runtime.gcBgMarkWorker()
+	/usr/local/go/src/runtime/mgc.go:1235 +0xf1 fp=0xc0004477e0 sp=0xc000447750 pc=0x41d791
+runtime.goexit()
+	/usr/local/go/src/runtime/asm_amd64.s:1594 +0x1 fp=0xc0004477e8 sp=0xc0004477e0 pc=0x4679e1
+created by runtime.gcBgMarkStartWorkers
+	/usr/local/go/src/runtime/mgc.go:1159 +0x25
+
+goroutine 40 [GC worker (idle)]:
+runtime.gopark(0x14659054816a5?, 0x3?, 0x8?, 0xaa?, 0x0?)
+	/usr/local/go/src/runtime/proc.go:363 +0xd6 fp=0xc000447f50 sp=0xc000447f30 pc=0x43a2f6
+runtime.gcBgMarkWorker()
+	/usr/local/go/src/runtime/mgc.go:1235 +0xf1 fp=0xc000447fe0 sp=0xc000447f50 pc=0x41d791
+runtime.goexit()
+	/usr/local/go/src/runtime/asm_amd64.s:1594 +0x1 fp=0xc000447fe8 sp=0xc000447fe0 pc=0x4679e1
+created by runtime.gcBgMarkStartWorkers
+	/usr/local/go/src/runtime/mgc.go:1159 +0x25
+
+goroutine 67 [GC worker (idle)]:
+runtime.gopark(0x146590544fb11?, 0x1?, 0xb2?, 0x91?, 0x0?)
+	/usr/local/go/src/runtime/proc.go:363 +0xd6 fp=0xc000442750 sp=0xc000442730 pc=0x43a2f6
+runtime.gcBgMarkWorker()
+	/usr/local/go/src/runtime/mgc.go:1235 +0xf1 fp=0xc0004427e0 sp=0xc000442750 pc=0x41d791
+runtime.goexit()
+	/usr/local/go/src/runtime/asm_amd64.s:1594 +0x1 fp=0xc0004427e8 sp=0xc0004427e0 pc=0x4679e1
+created by runtime.gcBgMarkStartWorkers
+	/usr/local/go/src/runtime/mgc.go:1159 +0x25
+
+goroutine 84 [GC worker (idle)]:
+runtime.gopark(0x146590547fa8e?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/usr/local/go/src/runtime/proc.go:363 +0xd6 fp=0xc0000d5750 sp=0xc0000d5730 pc=0x43a2f6
+runtime.gcBgMarkWorker()
+	/usr/local/go/src/runtime/mgc.go:1235 +0xf1 fp=0xc0000d57e0 sp=0xc0000d5750 pc=0x41d791
+runtime.goexit()
+	/usr/local/go/src/runtime/asm_amd64.s:1594 +0x1 fp=0xc0000d57e8 sp=0xc0000d57e0 pc=0x4679e1
+created by runtime.gcBgMarkStartWorkers
+	/usr/local/go/src/runtime/mgc.go:1159 +0x25
+
+goroutine 68 [GC worker (idle)]:
+runtime.gopark(0x146590542f8d2?, 0x1?, 0xbc?, 0x4b?, 0x0?)
+	/usr/local/go/src/runtime/proc.go:363 +0xd6 fp=0xc000442f50 sp=0xc000442f30 pc=0x43a2f6
+runtime.gcBgMarkWorker()
+	/usr/local/go/src/runtime/mgc.go:1235 +0xf1 fp=0xc000442fe0 sp=0xc000442f50 pc=0x41d791
+runtime.goexit()
+	/usr/local/go/src/runtime/asm_amd64.s:1594 +0x1 fp=0xc000442fe8 sp=0xc000442fe0 pc=0x4679e1
+created by runtime.gcBgMarkStartWorkers
+	/usr/local/go/src/runtime/mgc.go:1159 +0x25
+
+goroutine 41 [GC worker (idle)]:
+runtime.gopark(0x14659054cf077?, 0x3?, 0x8a?, 0x39?, 0x0?)
+	/usr/local/go/src/runtime/proc.go:363 +0xd6 fp=0xc000448750 sp=0xc000448730 pc=0x43a2f6
+runtime.gcBgMarkWorker()
+	/usr/local/go/src/runtime/mgc.go:1235 +0xf1 fp=0xc0004487e0 sp=0xc000448750 pc=0x41d791
+runtime.goexit()
+	/usr/local/go/src/runtime/asm_amd64.s:1594 +0x1 fp=0xc0004487e8 sp=0xc0004487e0 pc=0x4679e1
+created by runtime.gcBgMarkStartWorkers
+	/usr/local/go/src/runtime/mgc.go:1159 +0x25
+
+goroutine 8 [sleep]:
+runtime.gopark(0x14658fe106ff2?, 0xc0000dbf88?, 0x5?, 0x8c?, 0xc00041e0d0?)
+	/usr/local/go/src/runtime/proc.go:363 +0xd6 fp=0xc0000dbf58 sp=0xc0000dbf38 pc=0x43a2f6
+time.Sleep(0x2540be400)
+	/usr/local/go/src/runtime/time.go:195 +0x135 fp=0xc0000dbf98 sp=0xc0000dbf58 pc=0x464855
+github.com/valyala/fasthttp.(*workerPool).Start.func2()
+	/home/karan/go/pkg/mod/github.com/valyala/fasthttp@v1.40.0/workerpool.go:67 +0x56 fp=0xc0000dbfe0 sp=0xc0000dbf98 pc=0x7a7cb6
+runtime.goexit()
+	/usr/local/go/src/runtime/asm_amd64.s:1594 +0x1 fp=0xc0000dbfe8 sp=0xc0000dbfe0 pc=0x4679e1
+created by github.com/valyala/fasthttp.(*workerPool).Start
+	/home/karan/go/pkg/mod/github.com/valyala/fasthttp@v1.40.0/workerpool.go:59 +0xdd
+
+goroutine 146 [IO wait]:
+runtime.gopark(0xc0003b3b10?, 0xb?, 0x0?, 0x0?, 0xe?)
+	/usr/local/go/src/runtime/proc.go:363 +0xd6 fp=0xc0003b3af8 sp=0xc0003b3ad8 pc=0x43a2f6
+runtime.netpollblock(0x47aec5?, 0x4880f7?, 0x0?)
+	/usr/local/go/src/runtime/netpoll.go:526 +0xf7 fp=0xc0003b3b30 sp=0xc0003b3af8 pc=0x432e17
+internal/poll.runtime_pollWait(0x7fafce5b3e98, 0x72)
+	/usr/local/go/src/runtime/netpoll.go:305 +0x89 fp=0xc0003b3b50 sp=0xc0003b3b30 pc=0x462589
+internal/poll.(*pollDesc).wait(0xc0000d2300?, 0xc0004fe000?, 0x0)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:84 +0x32 fp=0xc0003b3b78 sp=0xc0003b3b50 pc=0x4cc252
+internal/poll.(*pollDesc).waitRead(...)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Read(0xc0000d2300, {0xc0004fe000, 0x1000, 0x1000})
+	/usr/local/go/src/internal/poll/fd_unix.go:167 +0x25a fp=0xc0003b3bf8 sp=0xc0003b3b78 pc=0x4cd5ba
+net.(*netFD).Read(0xc0000d2300, {0xc0004fe000?, 0x407c11?, 0x4?})
+	/usr/local/go/src/net/fd_posix.go:55 +0x29 fp=0xc0003b3c40 sp=0xc0003b3bf8 pc=0x520449
+net.(*conn).Read(0xc00067a018, {0xc0004fe000?, 0x0?, 0x0?})
+	/usr/local/go/src/net/net.go:183 +0x45 fp=0xc0003b3c88 sp=0xc0003b3c40 pc=0x5335e5
+net/http.(*persistConn).Read(0xc00057c000, {0xc0004fe000?, 0xc0000be660?, 0xc0003b3d30?})
+	/usr/local/go/src/net/http/transport.go:1929 +0x4e fp=0xc0003b3ce8 sp=0xc0003b3c88 pc=0x6b276e
+bufio.(*Reader).fill(0xc0000b62a0)
+	/usr/local/go/src/bufio/bufio.go:106 +0xff fp=0xc0003b3d20 sp=0xc0003b3ce8 pc=0x4fc47f
+bufio.(*Reader).Peek(0xc0000b62a0, 0x1)
+	/usr/local/go/src/bufio/bufio.go:144 +0x5d fp=0xc0003b3d40 sp=0xc0003b3d20 pc=0x4fc5dd
+net/http.(*persistConn).readLoop(0xc00057c000)
+	/usr/local/go/src/net/http/transport.go:2093 +0x1ac fp=0xc0003b3fc8 sp=0xc0003b3d40 pc=0x6b358c
+net/http.(*Transport).dialConn.func5()
+	/usr/local/go/src/net/http/transport.go:1751 +0x26 fp=0xc0003b3fe0 sp=0xc0003b3fc8 pc=0x6b1d66
+runtime.goexit()
+	/usr/local/go/src/runtime/asm_amd64.s:1594 +0x1 fp=0xc0003b3fe8 sp=0xc0003b3fe0 pc=0x4679e1
+created by net/http.(*Transport).dialConn
+	/usr/local/go/src/net/http/transport.go:1751 +0x173e
+
+goroutine 56 [IO wait]:
+runtime.gopark(0xc0003aeb10?, 0xb?, 0x0?, 0x0?, 0x10?)
+	/usr/local/go/src/runtime/proc.go:363 +0xd6 fp=0xc0003aeaf8 sp=0xc0003aead8 pc=0x43a2f6
+runtime.netpollblock(0x47aec5?, 0x4880f7?, 0x0?)
+	/usr/local/go/src/runtime/netpoll.go:526 +0xf7 fp=0xc0003aeb30 sp=0xc0003aeaf8 pc=0x432e17
+internal/poll.runtime_pollWait(0x7fafce5b3cb8, 0x72)
+	/usr/local/go/src/runtime/netpoll.go:305 +0x89 fp=0xc0003aeb50 sp=0xc0003aeb30 pc=0x462589
+internal/poll.(*pollDesc).wait(0xc000174380?, 0xc0000ae000?, 0x0)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:84 +0x32 fp=0xc0003aeb78 sp=0xc0003aeb50 pc=0x4cc252
+internal/poll.(*pollDesc).waitRead(...)
+	/usr/local/go/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Read(0xc000174380, {0xc0000ae000, 0x1000, 0x1000})
+	/usr/local/go/src/internal/poll/fd_unix.go:167 +0x25a fp=0xc0003aebf8 sp=0xc0003aeb78 pc=0x4cd5ba
+net.(*netFD).Read(0xc000174380, {0xc0000ae000?, 0x407c11?, 0x4?})
+	/usr/local/go/src/net/fd_posix.go:55 +0x29 fp=0xc0003aec40 sp=0xc0003aebf8 pc=0x520449
+net.(*conn).Read(0xc000014030, {0xc0000ae000?, 0x0?, 0x0?})
+	/usr/local/go/src/net/net.go:183 +0x45 fp=0xc0003aec88 sp=0xc0003aec40 pc=0x5335e5
+net/http.(*persistConn).Read(0xc00012ad80, {0xc0000ae000?, 0xc00002a720?, 0xc0003aed30?})
+	/usr/local/go/src/net/http/transport.go:1929 +0x4e fp=0xc0003aece8 sp=0xc0003aec88 pc=0x6b276e
+bufio.(*Reader).fill(0xc0004d0a80)
+	/usr/local/go/src/bufio/bufio.go:106 +0xff fp=0xc0003aed20 sp=0xc0003aece8 pc=0x4fc47f
+bufio.(*Reader).Peek(0xc0004d0a80, 0x1)
+	/usr/local/go/src/bufio/bufio.go:144 +0x5d fp=0xc0003aed40 sp=0xc0003aed20 pc=0x4fc5dd
+net/http.(*persistConn).readLoop(0xc00012ad80)
+	/usr/local/go/src/net/http/transport.go:2093 +0x1ac fp=0xc0003aefc8 sp=0xc0003aed40 pc=0x6b358c
+net/http.(*Transport).dialConn.func5()
+	/usr/local/go/src/net/http/transport.go:1751 +0x26 fp=0xc0003aefe0 sp=0xc0003aefc8 pc=0x6b1d66
+runtime.goexit()
+	/usr/local/go/src/runtime/asm_amd64.s:1594 +0x1 fp=0xc0003aefe8 sp=0xc0003aefe0 pc=0x4679e1
+created by net/http.(*Transport).dialConn
+	/usr/local/go/src/net/http/transport.go:1751 +0x173e
+
+goroutine 147 [select]:
+runtime.gopark(0xc000322f90?, 0x2?, 0xd8?, 0x2d?, 0xc000322f24?)
+	/usr/local/go/src/runtime/proc.go:363 +0xd6 fp=0xc000322d90 sp=0xc000322d70 pc=0x43a2f6
+runtime.selectgo(0xc000322f90, 0xc000322f20, 0xc000492280?, 0x0, 0xc0006763c0?, 0x1)
+	/usr/local/go/src/runtime/select.go:328 +0x7bc fp=0xc000322ed0 sp=0xc000322d90 pc=0x44965c
+net/http.(*persistConn).writeLoop(0xc00057c000)
+	/usr/local/go/src/net/http/transport.go:2392 +0xf5 fp=0xc000322fc8 sp=0xc000322ed0 pc=0x6b5215
+net/http.(*Transport).dialConn.func6()
+	/usr/local/go/src/net/http/transport.go:1752 +0x26 fp=0xc000322fe0 sp=0xc000322fc8 pc=0x6b1d06
+runtime.goexit()
+	/usr/local/go/src/runtime/asm_amd64.s:1594 +0x1 fp=0xc000322fe8 sp=0xc000322fe0 pc=0x4679e1
+created by net/http.(*Transport).dialConn
+	/usr/local/go/src/net/http/transport.go:1752 +0x1791
+
+goroutine 151 [select]:
+runtime.gopark(0xc000326f80?, 0x2?, 0x0?, 0x0?, 0xc000326f7c?)
+	/usr/local/go/src/runtime/proc.go:363 +0xd6 fp=0xc000326e08 sp=0xc000326de8 pc=0x43a2f6
+runtime.selectgo(0xc000326f80, 0xc000326f78, 0x0?, 0x0, 0xc00049ea20?, 0x1)
+	/usr/local/go/src/runtime/select.go:328 +0x7bc fp=0xc000326f48 sp=0xc000326e08 pc=0x44965c
+go.mongodb.org/mongo-driver/internal.(*CancellationListener).Listen(0xc0004900b0, {0xccea58, 0xc000492040}, 0xc00048e110)
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/internal/cancellation_listener.go:30 +0x78 fp=0xc000326fb0 sp=0xc000326f48 pc=0x8be598
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*connection).read.func2()
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/connection.go:420 +0x37 fp=0xc000326fe0 sp=0xc000326fb0 pc=0x9adfb7
+runtime.goexit()
+	/usr/local/go/src/runtime/asm_amd64.s:1594 +0x1 fp=0xc000326fe8 sp=0xc000326fe0 pc=0x4679e1
+created by go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*connection).read
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/connection.go:420 +0x179
+
+goroutine 57 [select]:
+runtime.gopark(0xc000327f90?, 0x2?, 0xd8?, 0x7d?, 0xc000327f24?)
+	/usr/local/go/src/runtime/proc.go:363 +0xd6 fp=0xc000327d90 sp=0xc000327d70 pc=0x43a2f6
+runtime.selectgo(0xc000327f90, 0xc000327f20, 0xc0000aa240?, 0x0, 0xc0004ec1b0?, 0x1)
+	/usr/local/go/src/runtime/select.go:328 +0x7bc fp=0xc000327ed0 sp=0xc000327d90 pc=0x44965c
+net/http.(*persistConn).writeLoop(0xc00012ad80)
+	/usr/local/go/src/net/http/transport.go:2392 +0xf5 fp=0xc000327fc8 sp=0xc000327ed0 pc=0x6b5215
+net/http.(*Transport).dialConn.func6()
+	/usr/local/go/src/net/http/transport.go:1752 +0x26 fp=0xc000327fe0 sp=0xc000327fc8 pc=0x6b1d06
+runtime.goexit()
+	/usr/local/go/src/runtime/asm_amd64.s:1594 +0x1 fp=0xc000327fe8 sp=0xc000327fe0 pc=0x4679e1
+created by net/http.(*Transport).dialConn
+	/usr/local/go/src/net/http/transport.go:1752 +0x1791
+
+goroutine 153 [select]:
+runtime.gopark(0xc000483f80?, 0x2?, 0x1?, 0x0?, 0xc000483f7c?)
+	/usr/local/go/src/runtime/proc.go:363 +0xd6 fp=0xc000483e08 sp=0xc000483de8 pc=0x43a2f6
+runtime.selectgo(0xc000483f80, 0xc000483f78, 0x0?, 0x0, 0x0?, 0x1)
+	/usr/local/go/src/runtime/select.go:328 +0x7bc fp=0xc000483f48 sp=0xc000483e08 pc=0x44965c
+go.mongodb.org/mongo-driver/internal.(*CancellationListener).Listen(0xc0006260b0, {0xccea58, 0xc000418140}, 0xc00048e180)
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/internal/cancellation_listener.go:30 +0x78 fp=0xc000483fb0 sp=0xc000483f48 pc=0x8be598
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*connection).read.func2()
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/connection.go:420 +0x37 fp=0xc000483fe0 sp=0xc000483fb0 pc=0x9adfb7
+runtime.goexit()
+	/usr/local/go/src/runtime/asm_amd64.s:1594 +0x1 fp=0xc000483fe8 sp=0xc000483fe0 pc=0x4679e1
+created by go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*connection).read
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/connection.go:420 +0x179
+
+goroutine 166 [select]:
+runtime.gopark(0xc0003b2f80?, 0x2?, 0x0?, 0x0?, 0xc0003b2f7c?)
+	/usr/local/go/src/runtime/proc.go:363 +0xd6 fp=0xc0003b2e08 sp=0xc0003b2de8 pc=0x43a2f6
+runtime.selectgo(0xc0003b2f80, 0xc0003b2f78, 0x0?, 0x0, 0x0?, 0x1)
+	/usr/local/go/src/runtime/select.go:328 +0x7bc fp=0xc0003b2f48 sp=0xc0003b2e08 pc=0x44965c
+go.mongodb.org/mongo-driver/internal.(*CancellationListener).Listen(0xc0004901d0, {0xccea58, 0xc0004921c0}, 0xc0006260d0)
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/internal/cancellation_listener.go:30 +0x78 fp=0xc0003b2fb0 sp=0xc0003b2f48 pc=0x8be598
+go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*connection).read.func2()
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/connection.go:420 +0x37 fp=0xc0003b2fe0 sp=0xc0003b2fb0 pc=0x9adfb7
+runtime.goexit()
+	/usr/local/go/src/runtime/asm_amd64.s:1594 +0x1 fp=0xc0003b2fe8 sp=0xc0003b2fe0 pc=0x4679e1
+created by go.mongodb.org/mongo-driver/x/mongo/driver/topology.(*connection).read
+	/home/karan/go/pkg/mod/go.mongodb.org/mongo-driver@v1.10.3/x/mongo/driver/topology/connection.go:420 +0x179
+exit status 2
+2022/10/27 18:03:05 Mongo connection successfull
+
+ ┌───────────────────────────────────────────────────┐ 
+ │                   Fiber v2.38.1                   │ 
+ │               http://127.0.0.1:8000               │ 
+ │       (bound on host 0.0.0.0 and port 8000)       │ 
+ │                                                   │ 
+ │ Handlers ............. 5  Processes ........... 1 │ 
+ │ Prefork ....... Disabled  PID ............ 339260 │ 
+ └───────────────────────────────────────────────────┘ 
+
+signal: interrupt
+2022/10/27 18:05:04 Mongo connection successfull
+
+ ┌───────────────────────────────────────────────────┐ 
+ │                   Fiber v2.38.1                   │ 
+ │               http://127.0.0.1:8000               │ 
+ │       (bound on host 0.0.0.0 and port 8000)       │ 
+ │                                                   │ 
+ │ Handlers ............. 5  Processes ........... 1 │ 
+ │ Prefork ....... Disabled  PID ............ 339752 │ 
+ └───────────────────────────────────────────────────┘ 
+
+2022/10/27 18:05:09 Cannot delete document <nil>
+signal: interrupt

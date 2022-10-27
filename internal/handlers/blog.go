@@ -18,6 +18,7 @@ type BlogServicePort interface {
 	Create(payload core.CreateBlogDto) (*primitive.ObjectID, *custom_errors.CustomError)
 	Get(id string) (*core.Blog, *custom_errors.CustomError)
 	Update(id string, payload core.CreateBlogDto) (*core.Blog, *custom_errors.CustomError)
+	Delete(id string) *custom_errors.CustomError
 }
 
 func NewBlogHandlers(blogService BlogServicePort) *BlogHandlers {
@@ -73,5 +74,15 @@ func (b *BlogHandlers) Update(c *fiber.Ctx) error {
 		return c.Status(fiber.StatusInternalServerError).JSON(createError.Message)
 	} else {
 		return c.JSON(res)
+	}
+}
+
+func (b *BlogHandlers) Delete(c *fiber.Ctx) error {
+	id := c.Params("id")
+	err := b.blogService.Delete(id)
+	if err != nil {
+		return c.Status(err.Status).JSON(err.Message)
+	} else {
+		return c.SendStatus(fiber.StatusAccepted)
 	}
 }
