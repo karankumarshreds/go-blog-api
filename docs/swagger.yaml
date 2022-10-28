@@ -1,0 +1,163 @@
+basePath: /
+definitions:
+  core.Blog:
+    properties:
+      _id:
+        type: string
+      body:
+        type: string
+      created_at:
+        type: string
+      description:
+        type: string
+      title:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  core.CreateBlogDto:
+    properties:
+      body:
+        type: string
+      description:
+        type: string
+      title:
+        type: string
+    required:
+    - body
+    - description
+    - title
+    type: object
+host: localhost:8000
+info:
+  contact: {}
+  title: Go Blog Api
+  version: "1.0"
+paths:
+  /api/blog/:
+    post:
+      consumes:
+      - application/json
+      description: Create a blog
+      parameters:
+      - description: Blog
+        in: body
+        name: blog
+        required: true
+        schema:
+          $ref: '#/definitions/core.CreateBlogDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/core.Blog'
+        "400":
+          description: Bad Request
+          schema: {}
+        "404":
+          description: Not Found
+          schema: {}
+        "500":
+          description: Internal Server Error
+          schema: {}
+      summary: Create a blog
+      tags:
+      - Item
+  /api/blog/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete a blog by its ID
+      parameters:
+      - description: Blog ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/core.Blog'
+        "400":
+          description: Bad Request
+          schema: {}
+        "404":
+          description: Not Found
+          schema: {}
+        "500":
+          description: Internal Server Error
+          schema: {}
+      summary: Delete a blog
+      tags:
+      - Item
+    get:
+      consumes:
+      - application/json
+      description: Get a Blog by its ID
+      operationId: get-item-by-id
+      parameters:
+      - description: Blog ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/core.Blog'
+        "400":
+          description: Bad Request
+          schema: {}
+        "404":
+          description: Not Found
+          schema: {}
+        "500":
+          description: Internal Server Error
+          schema: {}
+      summary: Get a Blog
+      tags:
+      - Item
+    put:
+      consumes:
+      - application/json
+      description: Update a blog by ID
+      parameters:
+      - description: Blog ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Blog
+        in: body
+        name: blog
+        required: true
+        schema:
+          $ref: '#/definitions/core.CreateBlogDto'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/core.Blog'
+        "400":
+          description: Bad Request
+          schema: {}
+        "404":
+          description: Not Found
+          schema: {}
+        "500":
+          description: Internal Server Error
+          schema: {}
+      summary: Update a blog
+      tags:
+      - Item
+swagger: "2.0"

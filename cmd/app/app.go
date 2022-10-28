@@ -8,9 +8,12 @@ import (
 	"time"
 
 	"github.com/gofiber/fiber/v2"
+	// _ "github.com/karankumarshreds/go-blog-api"
 	"github.com/karankumarshreds/go-blog-api/internal/handlers"
 	"github.com/karankumarshreds/go-blog-api/internal/repos"
 	"github.com/karankumarshreds/go-blog-api/internal/services"
+
+	swagger "github.com/arsmn/fiber-swagger/v2"
 
 	"github.com/joho/godotenv"
 	"go.mongodb.org/mongo-driver/mongo"
@@ -27,6 +30,10 @@ func NewApp() *App {
 
 const CONNECTION_TIMEOUT = 10
 
+// @title Go Blog Api
+// @version 1.0
+// @host localhost:8000
+// @BasePath /
 func (a *App) Init() {
 	CheckEnvs()
 	db := a.MongoConnect()
@@ -37,10 +44,16 @@ func (a *App) Init() {
 	blogService := services.NewBlogService(blogRepo)
 	blogHandlers := handlers.NewBlogHandlers(blogService)
 
+	a.app.Get("/swagger/*", swagger.New(swagger.Config{ // custom
+		URL:         "/swagger/doc.json",
+		DeepLinking: false,
+	}))
+
 	a.app.Post(createPath("/blog"), blogHandlers.Create)
 	a.app.Get(createPath("/blog/:id"), blogHandlers.Get)
 	a.app.Put(createPath("/blog/:id"), blogHandlers.Update)
 	a.app.Delete(createPath("/blog/:id"), blogHandlers.Delete)
+
 }
 
 func (a *App) Start() {
